@@ -33,6 +33,15 @@ from .compressed_workspace import (
     Concept,
     Relation,
 )
+from .integration import (
+    CheckResult,
+    ConnectionCheck,
+    ConnectionInput,
+    ConnectionResult,
+    ConsciousnessConnection,
+    VerificationReport,
+    verify_connection,
+)
 
 __all__ = [
     "DiscoveryConfig",
@@ -60,4 +69,11 @@ __all__ = [
     "CompressedWorkspace",
     "Concept",
     "Relation",
+    "CheckResult",
+    "ConnectionCheck",
+    "ConnectionInput",
+    "ConnectionResult",
+    "ConsciousnessConnection",
+    "VerificationReport",
+    "verify_connection",
 ]
