@@ -1,0 +1,6 @@
+external/
+results/
+__pycache__/
+*.pyc
+*.zip
+CARLA_Latest/

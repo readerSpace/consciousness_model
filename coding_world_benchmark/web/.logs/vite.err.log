@@ -1,0 +1,12 @@
+[2m3:13:22[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/api/health[39m
+Error: connect ECONNREFUSED 127.0.0.1:8787
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[2m3:15:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/api/health[39m
+Error: connect ECONNREFUSED 127.0.0.1:8787
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[2m3:15:16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/api/workspace/pick[39m
+Error: connect ECONNREFUSED 127.0.0.1:8787
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[2m3:17:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/api/workspace/pick[39m
+Error: connect ECONNREFUSED 127.0.0.1:8787
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)

@@ -1,0 +1,58 @@
+{
+  "grammar_candidates": [
+    "cycle(+x,+y,-x,-y)",
+    "cycle(+x,-y,-x,+y)",
+    "mean(square(electric))",
+    "path(+x)",
+    "path(+x,+y)",
+    "path(+x,-y)",
+    "path(+y)"
+  ],
+  "selected_concepts": [
+    "mean(square(electric))",
+    "cycle(+x,+y,-x,-y)",
+    "path(+y)"
+  ],
+  "validation_rmse": [
+    0.1093564170863482,
+    0.011190420673226896,
+    0.010747988684793638
+  ],
+  "size_results": [
+    {
+      "size": 8,
+      "rmse": 0.12921208588917088,
+      "concept_seconds": 8.14999220892787e-05,
+      "reference_seconds": 0.001791900023818016
+    },
+    {
+      "size": 10,
+      "rmse": 0.04979399837370832,
+      "concept_seconds": 8.010002784430981e-05,
+      "reference_seconds": 0.0013695999514311552
+    },
+    {
+      "size": 12,
+      "rmse": 0.11184266198493761,
+      "concept_seconds": 8.400005754083395e-05,
+      "reference_seconds": 0.0014714000280946493
+    },
+    {
+      "size": 16,
+      "rmse": 0.037689386718463336,
+      "concept_seconds": 0.00011209992226213217,
+      "reference_seconds": 0.001997999963350594
+    }
+  ],
+  "gauge_cycle_error": 3.469446951953614e-17,
+  "ablation_rmse_increase": {
+    "mean(square(electric))": 0.12697297654142486,
+    "cycle(+x,+y,-x,-y)": 0.01330262330195986,
+    "path(+y)": 0.04583430554206573
+  },
+  "broadcast_concepts": [
+    "episode:grammar:composes:mean(square(electric))",
+    "episode:grammar:composes:cycle(+x,+y,-x,-y)",
+    "episode:grammar:composes:path(+y)"
+  ]
+}

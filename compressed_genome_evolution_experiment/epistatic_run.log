@@ -1,0 +1,38 @@
+exp591 Epistatic Module Audit  L=16 p=4 B=4 families=12 readapt_seeds=30 max_steps=6000
+==========================================================================
+CONDITION  E_aligned
+==========================================================================
+       A_bit: Puseful=0.000 E[dF|>0]=0.000 eta=0.000 d_P=1.0 | succ=1.00 steps=412
+     A_block: Puseful=0.068 E[dF|>0]=0.250 eta=0.062 d_P=2.1 | succ=1.00 steps=131
+           C: Puseful=0.068 E[dF|>0]=0.250 eta=0.062 d_P=2.1 | succ=1.00 steps=131
+           R: Puseful=0.000 E[dF|>0]=0.000 eta=0.000 d_P=2.1 | succ=1.00 steps=355
+   C_shuffle: Puseful=0.000 E[dF|>0]=0.000 eta=0.000 d_P=2.1 | succ=1.00 steps=371
+==========================================================================
+CONDITION  E_shifted
+==========================================================================
+       A_bit: Puseful=0.000 E[dF|>0]=0.000 eta=0.000 d_P=1.0 | succ=1.00 steps=427
+     A_block: Puseful=0.067 E[dF|>0]=0.250 eta=0.062 d_P=2.1 | succ=1.00 steps=129
+           C: Puseful=0.000 E[dF|>0]=0.000 eta=0.000 d_P=2.1 | succ=1.00 steps=314
+           R: Puseful=0.000 E[dF|>0]=0.000 eta=0.000 d_P=2.1 | succ=1.00 steps=371
+   C_shuffle: Puseful=0.000 E[dF|>0]=0.000 eta=0.000 d_P=2.1 | succ=1.00 steps=356
+==========================================================================
+CONDITION  E_random
+==========================================================================
+       A_bit: Puseful=0.000 E[dF|>0]=0.000 eta=0.000 d_P=1.0 | succ=1.00 steps=445
+     A_block: Puseful=0.066 E[dF|>0]=0.250 eta=0.062 d_P=2.1 | succ=1.00 steps=140
+           C: Puseful=0.000 E[dF|>0]=0.000 eta=0.000 d_P=2.1 | succ=1.00 steps=363
+           R: Puseful=0.000 E[dF|>0]=0.000 eta=0.000 d_P=2.1 | succ=1.00 steps=390
+   C_shuffle: Puseful=0.001 E[dF|>0]=0.021 eta=0.005 d_P=2.1 | succ=1.00 steps=394
+==========================================================================
+PRE-REGISTERED DECISION
+==========================================================================
+  [aligned] C_advantage=True  (P_useful C=0.068 vs A_bit=0.000; eta C=0.062 vs 0.000; steps C=131 A_block=131 A_bit=412 R=355 C_shuf=371)
+  [shifted] C_advantage=False  (P_useful C=0.000 vs A_bit=0.000; eta C=0.000 vs 0.000; steps C=314 A_block=129 A_bit=427 R=371 C_shuf=356)
+  [random] C_advantage=False  (P_useful C=0.000 vs A_bit=0.000; eta C=0.000 vs 0.000; steps C=363 A_block=140 A_bit=445 R=390 C_shuf=394)
+
+  CORE (alignment, not compression per se, is causal): True
+    - aligned: C gains a fitness gradient A_bit lacks and matches the hand-designed block operator A_block
+    - shifted & random: the SAME compression C loses the advantage when its modules no longer match the epistatic blocks
+figure: epistatic.png
+==========================================================================
+done in 46.3s

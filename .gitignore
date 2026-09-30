@@ -1,3 +1,61 @@
+# ============================================================
+# 個人性が強いファイル（Personal notes / memos）
+# ============================================================
+# トップレベルの .md 研究メモ・検証ノートはすべて除外（設計書のみ追跡）
 /*.md
 !/意識モデル設計書.md
-/*idea_generate/data
+
+# idea_generate の個人メモデータ（Google Keep エクスポート等）
+idea_generate/data/
+
+# ローカルのエージェント状態・生成物
+/.conscious_coding_agent/
+/Claude outputs/
+
+# ============================================================
+# サイズの大きいフォルダ・成果物（Large folders / artifacts）
+# ============================================================
+# CARLA シミュレータ配布物一式（数 GB）。runner/agent/verify/scripts の
+# 自作コードは追跡できるよう、重い配布物・外部依存・結果だけを除外する。
+carla_world_benchmark/CARLA_Latest/
+carla_world_benchmark/CARLA_Latest.zip
+carla_world_benchmark/external/
+carla_world_benchmark/results/
+
+# 定理探索システムの生成物（~90MB, 未追跡）
+theorem_discovery_system/
+
+# ゲージ理論の検証データ（~4MB）
+su2_su3/
+
+# Web UI の依存・ビルド成果物
+coding_world_benchmark/web/node_modules/
+coding_world_benchmark/web/dist/
+coding_world_benchmark/web/electron/dist/
+coding_world_benchmark/.config
+
+# ============================================================
+# Python / Node / ツールのキャッシュ
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+node_modules/
+dist/
+build/
+*.egg-info/
+.venv/
+venv/
+
+# ============================================================
+# OS / エディタ
+# ============================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+.idea/
+.vscode/

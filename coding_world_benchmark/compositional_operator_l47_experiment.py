@@ -458,7 +458,7 @@ def evaluate_repo(sources: dict[str, str], alias: str, script: str) -> bool:
             f"import unittest\nimport {alias}\n\n\nclass Contract(unittest.TestCase):\n"
             f"    def test_contract(self):\n{body}\n", encoding="utf-8")
         return subprocess.run([sys.executable, "-m", "unittest", "discover", "-p", "test_*.py"],
-                              cwd=root, capture_output=True, text=True, check=False).returncode == 0
+                              cwd=root, capture_output=True, encoding="utf-8", errors="replace", check=False).returncode == 0
     finally:
         shutil.rmtree(root, ignore_errors=True)
 

@@ -1,0 +1,49 @@
+exp593 Adaptive Genome Capacity  schedule=[1, 2, 4, 2, 1] lam=0.001 seeds=[1, 2, 3, 4, 5, 6] gens=260
+==========================================================================
+BLOCK 1  main trajectory (MDL on)  schedule 1->2->4->2->1
+==========================================================================
+  stage0 rules=1  F=1.000  L_total= 39.7+-1.9  used_macros=1.0  n_params=4.3
+  stage1 rules=2  F=0.990  L_total= 59.3+-9.3  used_macros=2.3  n_params=5.3
+  stage2 rules=4  F=0.943  L_total=110.8+-15.3  used_macros=4.0  n_params=11.0
+  stage3 rules=2  F=0.990  L_total= 77.8+-16.6  used_macros=2.3  n_params=9.5
+  stage4 rules=1  F=1.000  L_total= 39.7+-1.9  used_macros=1.0  n_params=4.7
+==========================================================================
+BLOCK 2  exact representational deficit  F*(K)=max_{L(G)<=K} F(G)  (A=2,L=12)
+==========================================================================
+  rules=1: K_min(F=1.0) = 23 bits
+  rules=2: K_min(F=1.0) = 32 bits
+  rules=3: K_min(F=1.0) = 32 bits
+  -> more rules require a longer minimum description (capacity demand is a measured fact)
+==========================================================================
+BLOCK 3  controls (growth vs pruning dissociated)
+==========================================================================
+       mdl_on: peak(4-rule) L=110.8 F=0.943  |  back-to-1-rule L= 39.7  (shrank +71.2)
+      mdl_off: peak(4-rule) L=495.0 F=0.854  |  back-to-1-rule L=585.7  (shrank -90.7)
+      add_off: peak(4-rule) L= 18.3 F=0.302  |  back-to-1-rule L= 18.3  (shrank +0.0)
+   delete_off: peak(4-rule) L=191.5 F=0.885  |  back-to-1-rule L=199.0  (shrank -7.5)
+==========================================================================
+BLOCK 4  gene duplication -- redundant duplicate is pruned under MDL
+==========================================================================
+  mdl_on: TOTAL macros after evolving from a redundant duplicate = 1.00  (per seed [1, 1, 1, 1, 1, 1])
+  mdl_off: TOTAL macros after evolving from a redundant duplicate = 2.00  (per seed [2, 2, 2, 2, 2, 2])
+  -> MDL removes the redundant (unused) duplicate; without MDL it persists
+==========================================================================
+BLOCK 5  hysteresis (evolutionary-history memory)
+==========================================================================
+  complexity=2: L_up(stage1)=59.3  L_down(stage3)=77.8  (down - up = +18.5)
+  complexity=1: L_up(stage0)=39.7  L_down(stage4)=39.7  (down - up = +0.0)
+==========================================================================
+PRE-REGISTERED DECISION
+==========================================================================
+  H1  capacity demand up  => effective complexity up:   True  (L 40->111, used 1.0->4.0)
+  H2  capacity demand down => effective complexity down: True  (L 111->40, used 4.0->1.0)
+  control MDL-on prunes on down-ramp:      True
+  control MDL-off prunes less than MDL-on: True
+  control ADD-off plateaus F at peak:      True
+  control DELETE-off prunes less:          True
+  duplication: redundant duplicate pruned under MDL: True
+
+  CORE (adaptive capacity: grows on deficit, shrinks on redundancy, from MDL alone): True
+figure: capacity.png
+==========================================================================
+done in 407.6s

@@ -1,0 +1,100 @@
+exp589 optimality / Pareto audit  A=2 sizes=[8, 12, 16] lam_sweep=[0.0, 0.003, 0.006, 0.01, 0.015, 0.022] ga_seeds=[1, 2, 3]
+========================================================================
+SIZE L=8
+========================================================================
+  [periodic L=8]  L*(F=1.0)=29  L*(F>=0.9)=29  frontier=[(2,0.25), (7,0.38), (10,0.50), (18,0.62), (20,0.75), (24,0.88)...]
+      A : F=1.000 L_GA= 32 L*=29 dL=3 R_L=1.103
+      C lam=0.0    F=1.000 L_GA= 59 L*=29 dL=30 R_L=2.034 reuse=6.0 span=8.0
+      C lam=0.003  F=1.000 L_GA= 29 L*=29 dL=0 R_L=1.000 reuse=2.0 span=4.0
+      C lam=0.006  F=1.000 L_GA= 29 L*=29 dL=0 R_L=1.000 reuse=2.0 span=4.0
+      C lam=0.01   F=1.000 L_GA= 29 L*=29 dL=0 R_L=1.000 reuse=3.0 span=4.0
+      C lam=0.015  F=1.000 L_GA= 32 L*=29 dL=3 R_L=1.103 reuse=0.0 span=0.0
+      C lam=0.022  F=0.875 L_GA= 24 L*=24 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C*: F=1.000 L_GA=29 L*=29 dL=0 R_L=1.000
+  [structured L=8]  L*(F=1.0)=32  L*(F>=0.9)=32  frontier=[(2,0.38), (7,0.50), (10,0.62), (21,0.75), (26,0.88), (32,1.00)]
+      A : F=1.000 L_GA= 32 L*=32 dL=0 R_L=1.000
+      C lam=0.0    F=1.000 L_GA= 51 L*=32 dL=19 R_L=1.594 reuse=1.5 span=4.5
+      C lam=0.003  F=1.000 L_GA= 32 L*=32 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C lam=0.006  F=1.000 L_GA= 35 L*=32 dL=3 R_L=1.094 reuse=2.0 span=6.0
+      C lam=0.01   F=1.000 L_GA= 35 L*=32 dL=3 R_L=1.094 reuse=2.0 span=6.0
+      C lam=0.015  F=0.625 L_GA= 10 L*=10 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C lam=0.022  F=0.625 L_GA= 10 L*=10 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C*: F=1.000 L_GA=32 L*=32 dL=0 R_L=1.000
+  [unstructured L=8]  L*(F=1.0)=26  L*(F>=0.9)=26  frontier=[(2,0.50), (7,0.62), (10,0.75), (18,0.88), (26,1.00)]
+      A : F=1.000 L_GA= 32 L*=26 dL=6 R_L=1.231
+      C lam=0.0    F=1.000 L_GA= 37 L*=26 dL=11 R_L=1.423 reuse=1.0 span=3.0
+      C lam=0.003  F=1.000 L_GA= 29 L*=26 dL=3 R_L=1.115 reuse=1.0 span=4.0
+      C lam=0.006  F=1.000 L_GA= 29 L*=26 dL=3 R_L=1.115 reuse=1.0 span=4.0
+      C lam=0.01   F=0.875 L_GA= 18 L*=18 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C lam=0.015  F=0.875 L_GA= 18 L*=18 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C lam=0.022  F=0.750 L_GA= 10 L*=10 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C*: F=1.000 L_GA=29 L*=26 dL=3 R_L=1.115
+========================================================================
+SIZE L=12
+========================================================================
+  [periodic L=12]  L*(F=1.0)=29  L*(F>=0.9)=29  frontier=[(2,0.25), (7,0.33), (10,0.42), (18,0.50), (20,0.58), (23,0.75)...]
+      A : F=1.000 L_GA= 44 L*=29 dL=15 R_L=1.517
+      C lam=0.0    F=1.000 L_GA= 67 L*=29 dL=38 R_L=2.310 reuse=8.0 span=8.0
+      C lam=0.003  F=1.000 L_GA= 29 L*=29 dL=0 R_L=1.000 reuse=3.0 span=4.0
+      C lam=0.006  F=1.000 L_GA= 29 L*=29 dL=0 R_L=1.000 reuse=3.0 span=4.0
+      C lam=0.01   F=1.000 L_GA= 29 L*=29 dL=0 R_L=1.000 reuse=3.0 span=4.0
+      C lam=0.015  F=1.000 L_GA= 29 L*=29 dL=0 R_L=1.000 reuse=3.0 span=4.0
+      C lam=0.022  F=0.417 L_GA= 10 L*=10 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C*: F=1.000 L_GA=29 L*=29 dL=0 R_L=1.000
+  [structured L=12]  L*(F=1.0)=37  L*(F>=0.9)=32  frontier=[(2,0.58), (7,0.67), (10,0.75), (24,0.83), (32,0.92), (37,1.00)]
+      A : F=1.000 L_GA= 44 L*=37 dL=7 R_L=1.189
+      C lam=0.0    F=1.000 L_GA=104 L*=37 dL=67 R_L=2.811 reuse=1.0 span=8.0
+      C lam=0.003  F=1.000 L_GA= 37 L*=37 dL=0 R_L=1.000 reuse=2.0 span=4.0
+      C lam=0.006  F=0.750 L_GA= 10 L*=10 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C lam=0.01   F=0.750 L_GA= 10 L*=10 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C lam=0.015  F=0.750 L_GA= 10 L*=10 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C lam=0.022  F=0.750 L_GA= 10 L*=10 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C*: F=1.000 L_GA=37 L*=37 dL=0 R_L=1.000
+  [unstructured L=12]  L*(F=1.0)=37  L*(F>=0.9)=32  frontier=[(2,0.50), (7,0.58), (10,0.67), (18,0.75), (26,0.83), (32,0.92)...]
+      A : F=1.000 L_GA= 44 L*=37 dL=7 R_L=1.189
+      C lam=0.0    F=1.000 L_GA= 70 L*=37 dL=33 R_L=1.892 reuse=11.0 span=8.0
+      C lam=0.003  F=1.000 L_GA= 46 L*=37 dL=9 R_L=1.243 reuse=3.0 span=2.0
+      C lam=0.006  F=1.000 L_GA= 48 L*=37 dL=11 R_L=1.297 reuse=3.0 span=3.0
+      C lam=0.01   F=0.750 L_GA= 18 L*=18 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C lam=0.015  F=0.667 L_GA= 10 L*=10 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C lam=0.022  F=0.667 L_GA= 10 L*=10 dL=0 R_L=1.000 reuse=0.0 span=0.0
+      C*: F=1.000 L_GA=46 L*=37 dL=9 R_L=1.243
+========================================================================
+SIZE L=16
+========================================================================
+  [periodic L=16]  L*(F=1.0)=31  L*(F>=0.9)=31  frontier=[(23,0.75), (28,0.81), (31,1.00)]
+      A : F=1.000 L_GA= 58 L*=31 dL=27 R_L=1.871
+      C lam=0.0    F=1.000 L_GA= 43 L*=31 dL=12 R_L=1.387 reuse=3.0 span=8.0
+      C lam=0.003  F=1.000 L_GA= 31 L*=31 dL=0 R_L=1.000 reuse=5.0 span=4.0
+      C lam=0.006  F=1.000 L_GA= 31 L*=31 dL=0 R_L=1.000 reuse=4.0 span=4.0
+      C lam=0.01   F=1.000 L_GA= 31 L*=31 dL=0 R_L=1.000 reuse=6.0 span=4.0
+      C lam=0.015  F=1.000 L_GA= 31 L*=31 dL=0 R_L=1.000 reuse=7.0 span=4.0
+      C lam=0.022  F=1.000 L_GA= 31 L*=31 dL=0 R_L=1.000 reuse=7.0 span=4.0
+      C*: F=1.000 L_GA=31 L*=31 dL=0 R_L=1.000
+  [structured L=16]  L*(F=1.0)=37  L*(F>=0.9)=35  frontier=[(29,0.81), (34,0.88), (35,0.94), (37,1.00)]
+      A : F=1.000 L_GA= 58 L*=37 dL=21 R_L=1.568
+      C lam=0.0    F=1.000 L_GA=136 L*=37 dL=99 R_L=3.676 reuse=52.0 span=11.7
+      C lam=0.003  F=1.000 L_GA= 43 L*=37 dL=6 R_L=1.162 reuse=5.0 span=3.0
+      C lam=0.006  F=1.000 L_GA= 55 L*=37 dL=18 R_L=1.486 reuse=2.0 span=2.0
+      C lam=0.01   F=0.812 L_GA= 32 L*=29 dL=3 R_L=1.103 reuse=3.0 span=4.0
+      C lam=0.015  F=0.500 L_GA= 10 L*=None dL=None R_L=None reuse=0.0 span=0.0
+      C lam=0.022  F=0.438 L_GA=  7 L*=None dL=None R_L=None reuse=0.0 span=0.0
+      C*: F=1.000 L_GA=43 L*=37 dL=6 R_L=1.162
+  [unstructured L=16]  L*(F=1.0)=46  L*(F>=0.9)=38  frontier=[(26,0.75), (29,0.81), (34,0.88), (38,0.94), (46,1.00)]
+      A : F=1.000 L_GA= 58 L*=46 dL=12 R_L=1.261
+      C lam=0.0    F=1.000 L_GA= 79 L*=46 dL=33 R_L=1.717 reuse=1.0 span=7.0
+      C lam=0.003  F=1.000 L_GA= 63 L*=46 dL=17 R_L=1.370 reuse=0.0 span=0.0
+      C lam=0.006  F=0.875 L_GA= 39 L*=34 dL=5 R_L=1.147 reuse=5.0 span=3.0
+      C lam=0.01   F=0.625 L_GA= 10 L*=None dL=None R_L=None reuse=0.0 span=0.0
+      C lam=0.015  F=0.625 L_GA= 10 L*=None dL=None R_L=None reuse=0.0 span=0.0
+      C lam=0.022  F=0.562 L_GA=  7 L*=None dL=None R_L=None reuse=0.0 span=0.0
+      C*: F=1.000 L_GA=63 L*=46 dL=17 R_L=1.370
+========================================================================
+HEADLINE  (how close to the minimum description, at matched fitness)
+========================================================================
+      periodic: mean R_L  A=1.497  C*=1.000
+    structured: mean R_L  A=1.252  C*=1.054
+  unstructured: mean R_L  A=1.227  C*=1.243
+figure: pareto_frontier.png
+========================================================================
+done in 412.5s

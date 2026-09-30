@@ -106,7 +106,7 @@ def _write_repo(root: Path, task: L3Task) -> None:
 
 def _test(root: Path, pattern: str) -> bool:
     return subprocess.run([sys.executable, "-m", "unittest", "discover", "-p", pattern], cwd=root,
-                          capture_output=True, text=True, check=False).returncode == 0
+                          capture_output=True, encoding="utf-8", errors="replace", check=False).returncode == 0
 
 
 class StateTransitionAgent:

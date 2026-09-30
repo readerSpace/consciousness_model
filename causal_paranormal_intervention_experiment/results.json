@@ -1,0 +1,144 @@
+{
+  "case_count": 330,
+  "known_cause_count": 10,
+  "unknown_case_rate": 0.09090909090909091,
+  "ground_truth_hidden_from_agent": true,
+  "ambiguous_white_shape_causes": [
+    "window_reflection",
+    "lens_flare",
+    "motion_blur",
+    "dust_or_insect",
+    "fog",
+    "human",
+    "cognitive_pareidolia"
+  ],
+  "window_reflection_surface_forms": [
+    "white_human_like_shape",
+    "face_like_image",
+    "light_orb",
+    "moving_shadow"
+  ],
+  "one_step_known_accuracy": 0.23666666666666666,
+  "three_step_known_accuracy": 0.8433333333333334,
+  "unknown_overconfidence_rate": 0.0,
+  "minimum_identifying_action_rate": 0.8566666666666667,
+  "mean_selected_actions": 3.0,
+  "holdout_window_reflection_accuracy": 1.0,
+  "broadcast_concepts": [
+    "abstract:window_reflection:explained_by_action:inspect_window"
+  ],
+  "examples": [
+    {
+      "case_id": "case_000000",
+      "true_cause": "window_reflection",
+      "first_action": "inspect_window",
+      "selected_actions": [
+        "inspect_window",
+        "turn_off_external_light",
+        "record_from_second_camera"
+      ],
+      "final_prediction": "window_reflection",
+      "final_confidence": 0.9037165625427038,
+      "final_entropy": 0.20029418121191725,
+      "minimum_action_hit": true
+    },
+    {
+      "case_id": "case_000001",
+      "true_cause": "window_reflection",
+      "first_action": "inspect_window",
+      "selected_actions": [
+        "inspect_window",
+        "turn_off_external_light",
+        "record_from_second_camera"
+      ],
+      "final_prediction": "window_reflection",
+      "final_confidence": 0.862425317013649,
+      "final_entropy": 0.25941711261341,
+      "minimum_action_hit": true
+    },
+    {
+      "case_id": "case_000002",
+      "true_cause": "window_reflection",
+      "first_action": "inspect_window",
+      "selected_actions": [
+        "inspect_window",
+        "turn_off_external_light",
+        "record_from_second_camera"
+      ],
+      "final_prediction": "window_reflection",
+      "final_confidence": 0.862425317013649,
+      "final_entropy": 0.25941711261341,
+      "minimum_action_hit": true
+    },
+    {
+      "case_id": "case_000003",
+      "true_cause": "window_reflection",
+      "first_action": "inspect_window",
+      "selected_actions": [
+        "inspect_window",
+        "turn_off_external_light",
+        "repeat_with_camera_fixed"
+      ],
+      "final_prediction": "window_reflection",
+      "final_confidence": 0.9749586373114472,
+      "final_entropy": 0.06683058536257566,
+      "minimum_action_hit": true
+    },
+    {
+      "case_id": "case_000004",
+      "true_cause": "window_reflection",
+      "first_action": "inspect_window",
+      "selected_actions": [
+        "inspect_window",
+        "turn_off_external_light",
+        "repeat_with_camera_fixed"
+      ],
+      "final_prediction": "window_reflection",
+      "final_confidence": 0.9749586373114472,
+      "final_entropy": 0.06683058536257566,
+      "minimum_action_hit": true
+    },
+    {
+      "case_id": "case_000005",
+      "true_cause": "window_reflection",
+      "first_action": "inspect_window",
+      "selected_actions": [
+        "inspect_window",
+        "turn_off_external_light",
+        "repeat_with_camera_fixed"
+      ],
+      "final_prediction": "window_reflection",
+      "final_confidence": 0.9749586373114472,
+      "final_entropy": 0.06683058536257566,
+      "minimum_action_hit": true
+    },
+    {
+      "case_id": "case_000006",
+      "true_cause": "window_reflection",
+      "first_action": "inspect_window",
+      "selected_actions": [
+        "inspect_window",
+        "turn_off_external_light",
+        "repeat_with_camera_fixed"
+      ],
+      "final_prediction": "window_reflection",
+      "final_confidence": 0.9749586373114472,
+      "final_entropy": 0.06683058536257566,
+      "minimum_action_hit": true
+    },
+    {
+      "case_id": "case_000007",
+      "true_cause": "window_reflection",
+      "first_action": "inspect_window",
+      "selected_actions": [
+        "inspect_window",
+        "turn_off_external_light",
+        "record_from_second_camera"
+      ],
+      "final_prediction": "window_reflection",
+      "final_confidence": 0.9037165625427038,
+      "final_entropy": 0.20029418121191725,
+      "minimum_action_hit": true
+    }
+  ]
+}

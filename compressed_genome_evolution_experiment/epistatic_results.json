@@ -1,0 +1,632 @@
+{
+  "config": {
+    "L": 16,
+    "p": 4,
+    "B": 4,
+    "n_families": 12,
+    "readapt_seeds": 30,
+    "max_steps": 6000,
+    "threshold": 0.999
+  },
+  "conditions": {
+    "aligned": {
+      "A_bit": {
+        "P_useful": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 412.4638888888889,
+          "std": 44.68637305407986,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "A_block": {
+        "P_useful": {
+          "mean": 0.06800339831223959,
+          "std": 0.004637260436386159,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.25,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0625,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.136761865143084,
+          "std": 0.008431615401343323,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 130.51666666666668,
+          "std": 15.981189753141841,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "C": {
+        "P_useful": {
+          "mean": 0.06800339831223959,
+          "std": 0.004637260436386159,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.25,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0625,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.136761865143084,
+          "std": 0.008431615401343323,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 130.51666666666668,
+          "std": 15.981189753141841,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "R": {
+        "P_useful": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.1333151535177666,
+          "std": 0.014331279224734615,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 354.65555555555557,
+          "std": 54.71073314247996,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "C_shuffle": {
+        "P_useful": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.1299868777158655,
+          "std": 0.01435073099929008,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 371.1694444444444,
+          "std": 49.83515503607003,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      }
+    },
+    "shifted": {
+      "A_bit": {
+        "P_useful": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 426.5916666666667,
+          "std": 34.62279308383317,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "A_block": {
+        "P_useful": {
+          "mean": 0.06715280295525945,
+          "std": 0.0030266592913160114,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.25,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0625,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.1391709765899156,
+          "std": 0.011112328554772118,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 129.2111111111111,
+          "std": 8.88001640527903,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "C": {
+        "P_useful": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.136761865143084,
+          "std": 0.008431615401343323,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 313.93333333333334,
+          "std": 36.13756125326297,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "R": {
+        "P_useful": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.1333151535177666,
+          "std": 0.014331279224734615,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 371.4916666666667,
+          "std": 53.11773109312447,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "C_shuffle": {
+        "P_useful": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.1299868777158655,
+          "std": 0.01435073099929008,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 355.9083333333333,
+          "std": 61.38503123877339,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      }
+    },
+    "random": {
+      "A_bit": {
+        "P_useful": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 444.69444444444446,
+          "std": 36.2557449683478,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "A_block": {
+        "P_useful": {
+          "mean": 0.06632446572660336,
+          "std": 0.003372569244120576,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.25,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0625,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.1363238884560896,
+          "std": 0.010805205557136089,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 140.025,
+          "std": 11.896335609166629,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "C": {
+        "P_useful": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.136761865143084,
+          "std": 0.008431615401343323,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 362.76944444444445,
+          "std": 56.954025413507594,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "R": {
+        "P_useful": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.1333151535177666,
+          "std": 0.014331279224734615,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 390.39722222222224,
+          "std": 77.62835662013725,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      },
+      "C_shuffle": {
+        "P_useful": {
+          "mean": 0.0012271307452030344,
+          "std": 0.004069932250547679,
+          "n": 12
+        },
+        "E_dF_pos": {
+          "mean": 0.020833333333333332,
+          "std": 0.06909634979907082,
+          "n": 12
+        },
+        "eta_aggregate": {
+          "mean": 0.005208333333333333,
+          "std": 0.017274087449767706,
+          "n": 12
+        },
+        "mean_dP": {
+          "mean": 2.1299868777158655,
+          "std": 0.01435073099929008,
+          "n": 12
+        },
+        "succ": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 12
+        },
+        "mean_steps": {
+          "mean": 394.0888888888889,
+          "std": 68.01633972168601,
+          "n": 12
+        },
+        "plateauF": {
+          "mean": null,
+          "std": null,
+          "n": 0
+        }
+      }
+    }
+  },
+  "decision": {
+    "aligned": {
+      "P_useful_C": 0.06800339831223959,
+      "P_useful_Abit": 0.0,
+      "eta_C": 0.0625,
+      "eta_Abit": 0.0,
+      "steps": {
+        "C": 130.51666666666668,
+        "A_block": 130.51666666666668,
+        "A_bit": 412.4638888888889,
+        "R": 354.65555555555557,
+        "C_shuffle": 371.1694444444444
+      },
+      "C_advantage_present": true,
+      "useful_gt": true,
+      "eta_gt": true,
+      "C_near_A_block": true,
+      "C_faster_than_rest": true
+    },
+    "shifted": {
+      "P_useful_C": 0.0,
+      "P_useful_Abit": 0.0,
+      "eta_C": 0.0,
+      "eta_Abit": 0.0,
+      "steps": {
+        "C": 313.93333333333334,
+        "A_block": 129.2111111111111,
+        "A_bit": 426.5916666666667,
+        "R": 371.4916666666667,
+        "C_shuffle": 355.9083333333333
+      },
+      "C_advantage_present": false,
+      "useful_gt": false,
+      "eta_gt": false,
+      "C_near_A_block": false,
+      "C_faster_than_rest": true
+    },
+    "random": {
+      "P_useful_C": 0.0,
+      "P_useful_Abit": 0.0,
+      "eta_C": 0.0,
+      "eta_Abit": 0.0,
+      "steps": {
+        "C": 362.76944444444445,
+        "A_block": 140.025,
+        "A_bit": 444.69444444444446,
+        "R": 390.39722222222224,
+        "C_shuffle": 394.0888888888889
+      },
+      "C_advantage_present": false,
+      "useful_gt": false,
+      "eta_gt": false,
+      "C_near_A_block": false,
+      "C_faster_than_rest": true
+    },
+    "core_alignment_is_causal": true
+  },
+  "runtime_seconds": 46.28671169281006
+}

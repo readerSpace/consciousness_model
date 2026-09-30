@@ -105,7 +105,7 @@ def _write_holdout_repo(root: Path, task: HoldoutTask) -> None:
 def _run_tests(root: Path) -> bool:
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-p", "test_*.py"],
-        cwd=root, capture_output=True, text=True, check=False,
+        cwd=root, capture_output=True, encoding="utf-8", errors="replace", check=False,
     ).returncode == 0
 
 

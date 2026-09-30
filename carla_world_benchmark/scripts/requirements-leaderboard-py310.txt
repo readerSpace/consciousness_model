@@ -1,0 +1,29 @@
+# Relaxed dependency set for running leaderboard-2.0 / scenario_runner-2.0 on
+# Python 3.10 against a CARLA 0.9.16 server.
+#
+# The upstream pins (numpy==1.18.4, opencv-python==4.2.0.32, Shapely==1.7.1,
+# networkx==2.2) have no cp310 wheels, so they are relaxed to current versions.
+# Verified on 3.10.12 with carla 0.9.16: srunner and leaderboard both import,
+# the leaderboard's own validate_sensor_configuration accepts the agent, and all
+# three route files parse (2 / 90 / 20 routes) under shapely 2.1.2,
+# networkx 3.4.2 and numpy 2.2.6.
+numpy>=1.26,<3
+networkx>=3.0
+shapely>=2.0
+opencv-python>=4.8
+py-trees==0.8.3
+psutil
+xmlschema>=2.0
+ephem
+tabulate
+matplotlib
+six
+simple-watchdog-timer
+dictor
+requests
+pygame
+pexpect
+transforms3d
+# leaderboard_evaluator.py imports distutils, and something in that chain needs
+# pkg_resources. setuptools 81 starts removing it, so hold below that.
+setuptools<81

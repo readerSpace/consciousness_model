@@ -1,0 +1,53 @@
+exp588 Compressed Genome Evolution  A=4 L=32 pop=160 gens=220 lam=0.002 seeds=[1, 2, 3, 4, 5]
+========================================================================
+BLOCK 1  main comparison  A/B/C  x  {periodic, structured, unstructured}
+========================================================================
+      periodic A: F=1.000+-0.000 Ltot= 140.0 LG=139.0 LD=   1.0 reuse= 0.0 span= 0.0 AdEff(1e3)=5.36
+      periodic B: F=0.956+-0.087 Ltot= 149.0 LG=  9.2 LD= 139.8 reuse= 5.3 span=16.7 AdEff(1e3)=9.38
+      periodic C: F=0.956+-0.087 Ltot=  36.0 LG= 14.2 LD=  21.8 reuse= 6.4 span= 3.0 AdEff(1e3)=12.91
+    structured A: F=1.000+-0.000 Ltot= 140.0 LG=139.0 LD=   1.0 reuse= 0.0 span= 0.0 AdEff(1e3)=5.36
+    structured B: F=0.881+-0.075 Ltot= 174.6 LG= 23.0 LD= 151.6 reuse= 5.1 span= 8.1 AdEff(1e3)=4.71
+    structured C: F=0.850+-0.078 Ltot=  65.4 LG= 39.0 LD=  26.4 reuse= 2.9 span= 3.5 AdEff(1e3)=9.39
+  unstructured A: F=1.000+-0.000 Ltot= 140.0 LG=139.0 LD=   1.0 reuse= 0.0 span= 0.0 AdEff(1e3)=5.36
+  unstructured B: F=0.700+-0.067 Ltot= 193.8 LG= 24.8 LD= 169.0 reuse=17.7 span=13.0 AdEff(1e3)=3.46
+  unstructured C: F=0.625+-0.062 Ltot=  57.0 LG= 37.2 LD=  19.8 reuse= 6.8 span= 3.0 AdEff(1e3)=5.87
+========================================================================
+BLOCK 2  lambda sweep (group C)  ->  memorisation -> rule transition
+========================================================================
+      periodic lam=0.0     : F=1.000 Ltot= 152.8 reuse=18.8 span= 8.1
+      periodic lam=0.0001  : F=0.956 Ltot=  39.2 reuse= 6.4 span= 3.2
+      periodic lam=0.0003  : F=0.956 Ltot=  44.2 reuse= 6.4 span= 3.0
+      periodic lam=0.001   : F=0.956 Ltot=  43.4 reuse= 6.2 span= 3.6
+      periodic lam=0.002   : F=0.956 Ltot=  36.0 reuse= 6.4 span= 3.0
+      periodic lam=0.004   : F=0.906 Ltot=  31.0 reuse= 7.2 span= 3.2
+      periodic lam=0.008   : F=0.619 Ltot=  20.8 reuse= 4.6 span= 1.0
+      periodic lam=0.016   : F=0.331 Ltot=   8.0 reuse= 0.0 span= 0.0
+      periodic lam=0.032   : F=0.331 Ltot=   8.0 reuse= 0.0 span= 0.0
+    structured lam=0.0     : F=0.906 Ltot= 223.4 reuse=25.5 span=13.0
+    structured lam=0.0001  : F=0.887 Ltot=  89.6 reuse= 2.8 span= 4.7
+    structured lam=0.0003  : F=0.900 Ltot=  79.8 reuse= 4.4 span= 3.1
+    structured lam=0.001   : F=0.869 Ltot=  69.4 reuse= 3.4 span= 3.7
+    structured lam=0.002   : F=0.850 Ltot=  65.4 reuse= 2.9 span= 3.5
+    structured lam=0.004   : F=0.750 Ltot=  43.4 reuse= 4.4 span= 3.0
+    structured lam=0.008   : F=0.581 Ltot=  24.2 reuse= 2.6 span= 1.8
+    structured lam=0.016   : F=0.312 Ltot=   8.0 reuse= 0.0 span= 0.0
+    structured lam=0.032   : F=0.312 Ltot=   8.0 reuse= 0.0 span= 0.0
+========================================================================
+BLOCK 3  re-adaptation: evolve on env1, switch to related env2
+========================================================================
+  group A: recovered 5/5, gens_to_0.95=36.8, startF_after_switch=0.331 (vals [24, 36, 38, 47, 39])
+  group C: recovered 5/5, gens_to_0.95=12.0, startF_after_switch=0.463 (vals [13, 28, 5, 7, 7])
+========================================================================
+BLOCK 4  mutation robustness of champions (structured env, seed 1)
+========================================================================
+  group A: mean_abs_dF=0.0252 neutral=0.19 benef=0.00 delet=0.81 worst=-0.031
+  group B: mean_abs_dF=0.1903 neutral=0.36 benef=0.00 delet=0.64 worst=-0.719
+  group C: mean_abs_dF=0.1360 neutral=0.25 benef=0.00 delet=0.75 worst=-0.406
+========================================================================
+BLOCK 5  control: shuffled structure behaves like noise
+========================================================================
+  group A: structured Ltot= 140.0 (F=1.00) | shuffled Ltot= 140.0 (F=1.00)
+  group B: structured Ltot= 148.0 (F=1.00) | shuffled Ltot= 166.2 (F=0.81)
+  group C: structured Ltot=  37.0 (F=0.91) | shuffled Ltot=  50.4 (F=0.74)
+========================================================================
+done in 232.7s

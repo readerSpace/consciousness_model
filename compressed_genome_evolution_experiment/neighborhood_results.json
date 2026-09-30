@@ -1,0 +1,358 @@
+{
+  "config": {
+    "A": 2,
+    "L": 16,
+    "p": 4,
+    "n_families": 24,
+    "readapt_seeds": 40,
+    "max_steps": 800,
+    "threshold": 0.95
+  },
+  "block1_controlled": {
+    "A": {
+      "P_beneficial": {
+        "mean": 0.5729166666666666,
+        "std": 0.2221950938302244,
+        "n": 24
+      },
+      "E_dF_pos": {
+        "mean": 0.0625,
+        "std": 0.0,
+        "n": 24
+      },
+      "P_neutral": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "P_useful": {
+        "mean": 0.5729166666666666,
+        "std": 0.2221950938302244,
+        "n": 24
+      },
+      "mean_dP": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "eta_mean": {
+        "mean": 0.14583333333333334,
+        "std": 0.4443901876604488,
+        "n": 24
+      },
+      "eta_beneficial": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "F_E0": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "succ": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "mean_steps": {
+        "mean": 89.05833333333334,
+        "std": 15.155325429989581,
+        "n": 24
+      },
+      "plateauF": {
+        "mean": null,
+        "std": null,
+        "n": 0
+      }
+    },
+    "C": {
+      "P_beneficial": {
+        "mean": 0.5729166666666666,
+        "std": 0.2221950938302244,
+        "n": 24
+      },
+      "E_dF_pos": {
+        "mean": 0.25,
+        "std": 0.0,
+        "n": 24
+      },
+      "P_neutral": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "P_useful": {
+        "mean": 0.5729166666666666,
+        "std": 0.2221950938302244,
+        "n": 24
+      },
+      "mean_dP": {
+        "mean": 4.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "eta_mean": {
+        "mean": 0.14583333333333334,
+        "std": 0.4443901876604488,
+        "n": 24
+      },
+      "eta_beneficial": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "F_E0": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "succ": {
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "mean_steps": {
+        "mean": 12.405208333333333,
+        "std": 3.03718258943996,
+        "n": 24
+      },
+      "plateauF": {
+        "mean": null,
+        "std": null,
+        "n": 0
+      }
+    },
+    "R": {
+      "P_beneficial": {
+        "mean": 0.4270833333333333,
+        "std": 0.2649603612911855,
+        "n": 24
+      },
+      "E_dF_pos": {
+        "mean": 0.1328125,
+        "std": 0.08612143615294798,
+        "n": 24
+      },
+      "P_neutral": {
+        "mean": 0.125,
+        "std": 0.14433756729740643,
+        "n": 24
+      },
+      "P_useful": {
+        "mean": 0.4270833333333333,
+        "std": 0.2649603612911855,
+        "n": 24
+      },
+      "mean_dP": {
+        "mean": 4.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "eta_mean": {
+        "mean": 0.01592261904761905,
+        "std": 0.38475514143545453,
+        "n": 24
+      },
+      "eta_beneficial": {
+        "mean": 0.549500962000962,
+        "std": 0.3356005999398635,
+        "n": 24
+      },
+      "F_E0": {
+        "mean": 0.75,
+        "std": 0.08267972847076846,
+        "n": 24
+      },
+      "succ": {
+        "mean": 0.125,
+        "std": 0.33071891388307384,
+        "n": 24
+      },
+      "mean_steps": {
+        "mean": 12.333333333333332,
+        "std": 3.153393234103367,
+        "n": 3
+      },
+      "plateauF": {
+        "mean": 0.7410714285714286,
+        "std": 0.052062070489690186,
+        "n": 21
+      }
+    },
+    "C_shuffle": {
+      "P_beneficial": {
+        "mean": 0.4375,
+        "std": 0.3326816546389857,
+        "n": 24
+      },
+      "E_dF_pos": {
+        "mean": 0.125,
+        "std": 0.07607257743127308,
+        "n": 24
+      },
+      "P_neutral": {
+        "mean": 0.22916666666666666,
+        "std": 0.2030582155168534,
+        "n": 24
+      },
+      "P_useful": {
+        "mean": 0.4375,
+        "std": 0.3326816546389857,
+        "n": 24
+      },
+      "mean_dP": {
+        "mean": 4.0,
+        "std": 0.0,
+        "n": 24
+      },
+      "eta_mean": {
+        "mean": 0.052083333333333336,
+        "std": 0.4840108398120393,
+        "n": 24
+      },
+      "eta_beneficial": {
+        "mean": 0.5,
+        "std": 0.3042903097250923,
+        "n": 24
+      },
+      "F_E0": {
+        "mean": 0.7395833333333334,
+        "std": 0.08001193487363134,
+        "n": 24
+      },
+      "succ": {
+        "mean": 0.125,
+        "std": 0.33071891388307384,
+        "n": 24
+      },
+      "mean_steps": {
+        "mean": 10.325,
+        "std": 7.306874616870517,
+        "n": 3
+      },
+      "plateauF": {
+        "mean": 0.7380952380952381,
+        "std": 0.0762276694932482,
+        "n": 21
+      }
+    }
+  },
+  "block2_full_genome": {
+    "A": {
+      "baseF_E1": 0.25,
+      "baseL": 58,
+      "mean_dF_E1": 0.01625,
+      "P_useful": 1.0,
+      "frac_useful": 0.39,
+      "mean_abs_dL": 0.0,
+      "mean_dP": 0.52,
+      "champ_reuse": 0.0,
+      "champ_macro_span": 0.0
+    },
+    "C": {
+      "baseF_E1": 0.25,
+      "baseL": 31,
+      "mean_dF_E1": 0.1003125,
+      "P_useful": 1.0,
+      "frac_useful": 0.3125,
+      "mean_abs_dL": 5.2825,
+      "mean_dP": 2.52,
+      "champ_reuse": 4.0,
+      "champ_macro_span": 4.0
+    }
+  },
+  "block3_verify_structure": {
+    "discovered": 5,
+    "of": 8,
+    "details": [
+      {
+        "seed": 1,
+        "F": 1.0,
+        "L_total": 58,
+        "reuse": 0.0,
+        "span": 0.0,
+        "periodic": false
+      },
+      {
+        "seed": 2,
+        "F": 1.0,
+        "L_total": 7,
+        "reuse": 0.0,
+        "span": 0.0,
+        "periodic": false
+      },
+      {
+        "seed": 3,
+        "F": 1.0,
+        "L_total": 37,
+        "reuse": 7.0,
+        "span": 4.0,
+        "periodic": true
+      },
+      {
+        "seed": 4,
+        "F": 1.0,
+        "L_total": 25,
+        "reuse": 8.0,
+        "span": 2.0,
+        "periodic": true
+      },
+      {
+        "seed": 5,
+        "F": 1.0,
+        "L_total": 31,
+        "reuse": 5.0,
+        "span": 4.0,
+        "periodic": true
+      },
+      {
+        "seed": 6,
+        "F": 1.0,
+        "L_total": 34,
+        "reuse": 6.0,
+        "span": 4.0,
+        "periodic": true
+      },
+      {
+        "seed": 7,
+        "F": 1.0,
+        "L_total": 7,
+        "reuse": 0.0,
+        "span": 0.0,
+        "periodic": false
+      },
+      {
+        "seed": 8,
+        "F": 1.0,
+        "L_total": 25,
+        "reuse": 8.0,
+        "span": 2.0,
+        "periodic": true
+      }
+    ]
+  },
+  "decision": {
+    "P_useful": {
+      "C": 0.5729166666666666,
+      "A": 0.5729166666666666,
+      "R": 0.4270833333333333
+    },
+    "T095_mean_steps": {
+      "C": 12.405208333333333,
+      "A": 89.05833333333334,
+      "R": Infinity
+    },
+    "eta_beneficial": {
+      "C": 1.0,
+      "A": 1.0,
+      "R": 0.549500962000962
+    },
+    "primary_useful_vs_A": false,
+    "primary_useful_vs_R": true,
+    "primary_speed": true,
+    "secondary_eta": false,
+    "core_structure_beats_size": true
+  },
+  "runtime_seconds": 23.729716539382935
+}

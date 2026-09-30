@@ -1,0 +1,35 @@
+exp590 mutation-neighborhood audit  A=2 L=16 p=4 families=24 readapt_seeds=40
+==========================================================================
+BLOCK 1  controlled A / C / R / C_shuffle  (periodic families, E0->E1)
+==========================================================================
+          A: F_E0=1.00 Puseful=0.57 E[dF|>0]=0.062 d_P=1.0 eta_ben=1.00 | T0.95 succ=1.00 steps=89.1 plateauF=n/a
+          C: F_E0=1.00 Puseful=0.57 E[dF|>0]=0.250 d_P=4.0 eta_ben=1.00 | T0.95 succ=1.00 steps=12.4 plateauF=n/a
+          R: F_E0=0.75 Puseful=0.43 E[dF|>0]=0.133 d_P=4.0 eta_ben=0.55 | T0.95 succ=0.12 steps=12.3 plateauF=0.7
+  C_shuffle: F_E0=0.74 Puseful=0.44 E[dF|>0]=0.125 d_P=4.0 eta_ben=0.50 | T0.95 succ=0.12 steps=10.3 plateauF=0.7
+==========================================================================
+BLOCK 2  full-genome neighborhood (real evolved genomes)  dF_E1 / dL / d_P
+==========================================================================
+  A: baseF_E1=0.25 baseL=58 frac_useful=0.39 mean_dP=0.5 mean|dL|=0.0 reuse=0.0 span=0.0
+  C: baseF_E1=0.25 baseL=31 frac_useful=0.31 mean_dP=2.5 mean|dL|=5.3 reuse=4.0 span=4.0
+==========================================================================
+BLOCK 3  verify MDL-GA discovers period-4 structure (so block 1's C is real)
+==========================================================================
+  period-4 structure discovered in 5/8 seeds (F>=0.95, reuse>=2, span<=5, L<45)
+==========================================================================
+PRE-REGISTERED DECISION
+==========================================================================
+  P_useful: C=0.573  A=0.573  R=0.427
+    primary  P_useful(C)>P_useful(A): False
+    primary  P_useful(C)>P_useful(R): True
+  T_0.95 (mean steps; inf=did not reach): C=12.405208333333333  A=89.05833333333334  R=inf
+    primary  T_0.95(C)<T_0.95(A) and <T_0.95(R): True
+  eta_beneficial: C=1.000  A=1.000  R=0.550
+    secondary eta(C)>eta(R) and eta(C)>eta(A): False
+
+  CORE conclusion supported (structure beats size): True
+    - C re-adapts fastest: True
+    - vs R (same size, no structure): P_useful True, eta 1.00>0.55 True, R reaches 0.95: False
+    - note: P_useful(C)>P_useful(A) is False (ties under additive fitness; A's disadvantage is step SIZE not per-position efficiency)
+figure: neighborhood.png
+==========================================================================
+done in 23.7s

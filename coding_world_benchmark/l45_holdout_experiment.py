@@ -56,7 +56,7 @@ def _write_repo(root: Path, task: HoldoutContract) -> None:
 
 def _test(root: Path) -> bool:
     return subprocess.run([sys.executable, "-m", "unittest", "discover", "-p", "test_*.py"], cwd=root,
-                          capture_output=True, text=True, check=False).returncode == 0
+                          capture_output=True, encoding="utf-8", errors="replace", check=False).returncode == 0
 
 
 def evaluate_l4_grammar(tasks: tuple[HoldoutContract, ...]) -> dict[str, float | int]:

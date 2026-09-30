@@ -1,0 +1,26 @@
+# UNTESTED. The leaderboard-2.0 / scenario_runner-2.0 branches pin a Python 3.7
+# era stack (numpy==1.18.4, opencv-python==4.2.0.32, Shapely==1.7.1,
+# networkx==2.2) that has no CPython 3.12 wheels, so those pins are relaxed to
+# the nearest 3.12-capable versions here. Shapely 2.x and networkx 3.x changed
+# APIs that scenario_runner may rely on -- expect breakage and read README
+# section 6 before spending time on this path.
+numpy>=1.26,<3
+networkx>=3.0
+shapely>=2.0
+opencv-python>=4.8
+py-trees==0.8.3
+psutil
+xmlschema>=2.0
+ephem
+tabulate
+matplotlib
+six
+simple-watchdog-timer
+dictor
+requests
+pygame
+pexpect
+transforms3d
+# setuptools provides the distutils shim that leaderboard_evaluator.py and two
+# scenario_runner modules still import; Python 3.12 removed the stdlib version.
+setuptools

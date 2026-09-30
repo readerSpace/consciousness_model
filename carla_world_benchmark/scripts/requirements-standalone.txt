@@ -1,0 +1,7 @@
+# Everything runner/carla_runner.py needs beyond the CARLA client wheel.
+# agents.navigation (shipped inside the CARLA package) imports numpy, networkx
+# and shapely; all three have CPython 3.12 wheels at these versions.
+numpy>=1.26,<3
+networkx>=3.0
+shapely>=2.0
+tabulate>=0.9

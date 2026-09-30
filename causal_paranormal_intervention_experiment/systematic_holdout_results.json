@@ -1,0 +1,319 @@
+{
+  "train_cases": 270,
+  "test_cases_by_split": {
+    "random": 270,
+    "appearance_holdout": 320,
+    "context_holdout": 240,
+    "factor_combo_holdout": 220
+  },
+  "agents": [
+    "causal_eig_concept",
+    "causal_random_intervention",
+    "eig_no_transfer",
+    "nearest",
+    "majority"
+  ],
+  "accuracy_by_holdout_level": {
+    "random": {
+      "causal_eig_concept": 0.9814814814814815,
+      "causal_random_intervention": 1.0,
+      "eig_no_transfer": 1.0,
+      "nearest": 0.5,
+      "majority": 0.1
+    },
+    "appearance_holdout": {
+      "causal_eig_concept": 0.946875,
+      "causal_random_intervention": 0.959375,
+      "eig_no_transfer": 0.45,
+      "nearest": 0.0,
+      "majority": 0.1
+    },
+    "context_holdout": {
+      "causal_eig_concept": 0.9916666666666667,
+      "causal_random_intervention": 0.9916666666666667,
+      "eig_no_transfer": 0.8166666666666667,
+      "nearest": 0.0,
+      "majority": 0.1
+    },
+    "factor_combo_holdout": {
+      "causal_eig_concept": 0.9166666666666666,
+      "causal_random_intervention": 0.9944444444444445,
+      "eig_no_transfer": 0.26666666666666666,
+      "nearest": 0.5,
+      "majority": 0.1
+    }
+  },
+  "transfer_gain_by_split": {
+    "random": -0.01851851851851849,
+    "appearance_holdout": 0.496875,
+    "context_holdout": 0.17500000000000004,
+    "factor_combo_holdout": 0.6499999999999999
+  },
+  "anonymized_token_transfer_gain": 0.6333333333333333,
+  "evaluations": [
+    {
+      "agent": "causal_eig_concept",
+      "split": "random",
+      "known_cause_accuracy": 0.9814814814814815,
+      "interventions_to_identification": 1.025925925925926,
+      "minimal_action_hit_rate": 0.8777777777777778,
+      "posterior_entropy_reduction": 0.004394812478865336,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.014814814814814815,
+      "concept_reuse_count": 810
+    },
+    {
+      "agent": "causal_random_intervention",
+      "split": "random",
+      "known_cause_accuracy": 1.0,
+      "interventions_to_identification": 3.0,
+      "minimal_action_hit_rate": 0.35555555555555557,
+      "posterior_entropy_reduction": 0.0019393693106271564,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "eig_no_transfer",
+      "split": "random",
+      "known_cause_accuracy": 1.0,
+      "interventions_to_identification": 1.4,
+      "minimal_action_hit_rate": 0.1,
+      "posterior_entropy_reduction": -6.373502548774047e-18,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "nearest",
+      "split": "random",
+      "known_cause_accuracy": 0.5,
+      "interventions_to_identification": 0.0,
+      "minimal_action_hit_rate": 0.0,
+      "posterior_entropy_reduction": 0.0,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.5,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "majority",
+      "split": "random",
+      "known_cause_accuracy": 0.1,
+      "interventions_to_identification": 0.0,
+      "minimal_action_hit_rate": 0.0,
+      "posterior_entropy_reduction": 0.0,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "causal_eig_concept",
+      "split": "appearance_holdout",
+      "known_cause_accuracy": 0.946875,
+      "interventions_to_identification": 1.125,
+      "minimal_action_hit_rate": 0.896875,
+      "posterior_entropy_reduction": 0.09605108134367578,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.00625,
+      "concept_reuse_count": 1770
+    },
+    {
+      "agent": "causal_random_intervention",
+      "split": "appearance_holdout",
+      "known_cause_accuracy": 0.959375,
+      "interventions_to_identification": 3.0,
+      "minimal_action_hit_rate": 0.328125,
+      "posterior_entropy_reduction": 0.04848587226509929,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "eig_no_transfer",
+      "split": "appearance_holdout",
+      "known_cause_accuracy": 0.45,
+      "interventions_to_identification": 3.0,
+      "minimal_action_hit_rate": 0.10625,
+      "posterior_entropy_reduction": -5.551115123125783e-18,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "nearest",
+      "split": "appearance_holdout",
+      "known_cause_accuracy": 0.0,
+      "interventions_to_identification": 0.0,
+      "minimal_action_hit_rate": 0.0,
+      "posterior_entropy_reduction": 0.0,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.3,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "majority",
+      "split": "appearance_holdout",
+      "known_cause_accuracy": 0.1,
+      "interventions_to_identification": 0.0,
+      "minimal_action_hit_rate": 0.0,
+      "posterior_entropy_reduction": 0.0,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "causal_eig_concept",
+      "split": "context_holdout",
+      "known_cause_accuracy": 0.9916666666666667,
+      "interventions_to_identification": 1.0208333333333333,
+      "minimal_action_hit_rate": 0.8666666666666667,
+      "posterior_entropy_reduction": 0.03982397730624433,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.004166666666666667,
+      "concept_reuse_count": 2490
+    },
+    {
+      "agent": "causal_random_intervention",
+      "split": "context_holdout",
+      "known_cause_accuracy": 0.9916666666666667,
+      "interventions_to_identification": 3.0,
+      "minimal_action_hit_rate": 0.325,
+      "posterior_entropy_reduction": 0.01680535576695811,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "eig_no_transfer",
+      "split": "context_holdout",
+      "known_cause_accuracy": 0.8166666666666667,
+      "interventions_to_identification": 1.8,
+      "minimal_action_hit_rate": 0.12083333333333333,
+      "posterior_entropy_reduction": -8.049116928532385e-17,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "nearest",
+      "split": "context_holdout",
+      "known_cause_accuracy": 0.0,
+      "interventions_to_identification": 0.0,
+      "minimal_action_hit_rate": 0.0,
+      "posterior_entropy_reduction": 0.0,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "majority",
+      "split": "context_holdout",
+      "known_cause_accuracy": 0.1,
+      "interventions_to_identification": 0.0,
+      "minimal_action_hit_rate": 0.0,
+      "posterior_entropy_reduction": 0.0,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "causal_eig_concept",
+      "split": "factor_combo_holdout",
+      "known_cause_accuracy": 0.9166666666666666,
+      "interventions_to_identification": 1.1444444444444444,
+      "minimal_action_hit_rate": 0.8333333333333334,
+      "posterior_entropy_reduction": 0.09332037378606775,
+      "unexplained_precision": 0.8333333333333334,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.01818181818181818,
+      "concept_reuse_count": 3150
+    },
+    {
+      "agent": "causal_random_intervention",
+      "split": "factor_combo_holdout",
+      "known_cause_accuracy": 0.9944444444444445,
+      "interventions_to_identification": 3.0,
+      "minimal_action_hit_rate": 0.3111111111111111,
+      "posterior_entropy_reduction": 0.06585187901606251,
+      "unexplained_precision": 1.0,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "eig_no_transfer",
+      "split": "factor_combo_holdout",
+      "known_cause_accuracy": 0.26666666666666666,
+      "interventions_to_identification": 3.0,
+      "minimal_action_hit_rate": 0.1,
+      "posterior_entropy_reduction": 0.0,
+      "unexplained_precision": 0.23255813953488372,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "nearest",
+      "split": "factor_combo_holdout",
+      "known_cause_accuracy": 0.5,
+      "interventions_to_identification": 0.0,
+      "minimal_action_hit_rate": 0.0,
+      "posterior_entropy_reduction": 0.0,
+      "unexplained_precision": 1.0,
+      "unexplained_recall": 0.25,
+      "overconfidence_rate": 0.5454545454545454,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "majority",
+      "split": "factor_combo_holdout",
+      "known_cause_accuracy": 0.1,
+      "interventions_to_identification": 0.0,
+      "minimal_action_hit_rate": 0.0,
+      "posterior_entropy_reduction": 0.0,
+      "unexplained_precision": 0.0,
+      "unexplained_recall": 0.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    },
+    {
+      "agent": "causal_eig_concept_anonymized",
+      "split": "factor_combo_holdout",
+      "known_cause_accuracy": 0.9,
+      "interventions_to_identification": 1.1833333333333333,
+      "minimal_action_hit_rate": 0.8555555555555555,
+      "posterior_entropy_reduction": 0.12340594399399822,
+      "unexplained_precision": 0.7843137254901961,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.022727272727272728,
+      "concept_reuse_count": 1760
+    },
+    {
+      "agent": "eig_no_transfer_anonymized",
+      "split": "factor_combo_holdout",
+      "known_cause_accuracy": 0.26666666666666666,
+      "interventions_to_identification": 3.0,
+      "minimal_action_hit_rate": 0.1,
+      "posterior_entropy_reduction": 0.0,
+      "unexplained_precision": 0.23255813953488372,
+      "unexplained_recall": 1.0,
+      "overconfidence_rate": 0.0,
+      "concept_reuse_count": 0
+    }
+  ]
+}

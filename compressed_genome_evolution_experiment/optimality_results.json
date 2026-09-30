@@ -1,0 +1,1340 @@
+{
+  "config": {
+    "A": 2,
+    "sizes": [
+      8,
+      12,
+      16
+    ],
+    "lam_sweep": [
+      0.0,
+      0.003,
+      0.006,
+      0.01,
+      0.015,
+      0.022
+    ],
+    "ga_seeds": [
+      1,
+      2,
+      3
+    ],
+    "ball_radius": {
+      "16": 4
+    }
+  },
+  "cells": [
+    {
+      "ttype": "periodic",
+      "L": 8,
+      "target": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "rule": "period-4 tile [1, 1, 0, 1]",
+      "full_enumeration": true,
+      "f_min": 0.0,
+      "frontier": [
+        [
+          2,
+          0.25
+        ],
+        [
+          7,
+          0.375
+        ],
+        [
+          10,
+          0.5
+        ],
+        [
+          18,
+          0.625
+        ],
+        [
+          20,
+          0.75
+        ],
+        [
+          24,
+          0.875
+        ],
+        [
+          29,
+          1.0
+        ]
+      ],
+      "Lstar_F1": 29,
+      "Lstar_F09": 29,
+      "A": {
+        "lam": null,
+        "F": 1.0,
+        "L_total": 32,
+        "LG": 31,
+        "LD": 1,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 29,
+        "deltaL": 3,
+        "R_L": 1.103448275862069
+      },
+      "C_sweep": [
+        {
+          "lam": 0.0,
+          "F": 1.0,
+          "L_total": 59,
+          "LG": 25,
+          "LD": 34,
+          "reuse_rate": 6.0,
+          "mean_macro_span": 8.0,
+          "Lstar": 29,
+          "deltaL": 30,
+          "R_L": 2.0344827586206895
+        },
+        {
+          "lam": 0.003,
+          "F": 1.0,
+          "L_total": 29,
+          "LG": 9,
+          "LD": 20,
+          "reuse_rate": 2.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 29,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.006,
+          "F": 1.0,
+          "L_total": 29,
+          "LG": 9,
+          "LD": 20,
+          "reuse_rate": 2.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 29,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.01,
+          "F": 1.0,
+          "L_total": 29,
+          "LG": 9,
+          "LD": 20,
+          "reuse_rate": 3.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 29,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.015,
+          "F": 1.0,
+          "L_total": 32,
+          "LG": 31,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 29,
+          "deltaL": 3,
+          "R_L": 1.103448275862069
+        },
+        {
+          "lam": 0.022,
+          "F": 0.875,
+          "L_total": 24,
+          "LG": 23,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 24,
+          "deltaL": 0,
+          "R_L": 1.0
+        }
+      ],
+      "C_representative": {
+        "lam": 0.003,
+        "F": 1.0,
+        "L_total": 29,
+        "LG": 9,
+        "LD": 20,
+        "reuse_rate": 2.0,
+        "mean_macro_span": 4.0,
+        "Lstar": 29,
+        "deltaL": 0,
+        "R_L": 1.0
+      }
+    },
+    {
+      "ttype": "structured",
+      "L": 8,
+      "target": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "rule": "tile(motif[1, 1, 0, 0]) ++ mirror(block[0, 1, 1, 0]) with 1 nuisance",
+      "full_enumeration": true,
+      "f_min": 0.0,
+      "frontier": [
+        [
+          2,
+          0.375
+        ],
+        [
+          7,
+          0.5
+        ],
+        [
+          10,
+          0.625
+        ],
+        [
+          21,
+          0.75
+        ],
+        [
+          26,
+          0.875
+        ],
+        [
+          32,
+          1.0
+        ]
+      ],
+      "Lstar_F1": 32,
+      "Lstar_F09": 32,
+      "A": {
+        "lam": null,
+        "F": 1.0,
+        "L_total": 32,
+        "LG": 31,
+        "LD": 1,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 32,
+        "deltaL": 0,
+        "R_L": 1.0
+      },
+      "C_sweep": [
+        {
+          "lam": 0.0,
+          "F": 1.0,
+          "L_total": 51,
+          "LG": 16,
+          "LD": 35,
+          "reuse_rate": 1.5,
+          "mean_macro_span": 4.5,
+          "Lstar": 32,
+          "deltaL": 19,
+          "R_L": 1.59375
+        },
+        {
+          "lam": 0.003,
+          "F": 1.0,
+          "L_total": 32,
+          "LG": 31,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 32,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.006,
+          "F": 1.0,
+          "L_total": 35,
+          "LG": 9,
+          "LD": 26,
+          "reuse_rate": 2.0,
+          "mean_macro_span": 6.0,
+          "Lstar": 32,
+          "deltaL": 3,
+          "R_L": 1.09375
+        },
+        {
+          "lam": 0.01,
+          "F": 1.0,
+          "L_total": 35,
+          "LG": 9,
+          "LD": 26,
+          "reuse_rate": 2.0,
+          "mean_macro_span": 6.0,
+          "Lstar": 32,
+          "deltaL": 3,
+          "R_L": 1.09375
+        },
+        {
+          "lam": 0.015,
+          "F": 0.625,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 10,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.022,
+          "F": 0.625,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 10,
+          "deltaL": 0,
+          "R_L": 1.0
+        }
+      ],
+      "C_representative": {
+        "lam": 0.003,
+        "F": 1.0,
+        "L_total": 32,
+        "LG": 31,
+        "LD": 1,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 32,
+        "deltaL": 0,
+        "R_L": 1.0
+      }
+    },
+    {
+      "ttype": "unstructured",
+      "L": 8,
+      "target": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "rule": "uniform i.i.d. noise (no rule)",
+      "full_enumeration": true,
+      "f_min": 0.0,
+      "frontier": [
+        [
+          2,
+          0.5
+        ],
+        [
+          7,
+          0.625
+        ],
+        [
+          10,
+          0.75
+        ],
+        [
+          18,
+          0.875
+        ],
+        [
+          26,
+          1.0
+        ]
+      ],
+      "Lstar_F1": 26,
+      "Lstar_F09": 26,
+      "A": {
+        "lam": null,
+        "F": 1.0,
+        "L_total": 32,
+        "LG": 31,
+        "LD": 1,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 26,
+        "deltaL": 6,
+        "R_L": 1.2307692307692308
+      },
+      "C_sweep": [
+        {
+          "lam": 0.0,
+          "F": 1.0,
+          "L_total": 37,
+          "LG": 20,
+          "LD": 17,
+          "reuse_rate": 1.0,
+          "mean_macro_span": 3.0,
+          "Lstar": 26,
+          "deltaL": 11,
+          "R_L": 1.4230769230769231
+        },
+        {
+          "lam": 0.003,
+          "F": 1.0,
+          "L_total": 29,
+          "LG": 9,
+          "LD": 20,
+          "reuse_rate": 1.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 26,
+          "deltaL": 3,
+          "R_L": 1.1153846153846154
+        },
+        {
+          "lam": 0.006,
+          "F": 1.0,
+          "L_total": 29,
+          "LG": 9,
+          "LD": 20,
+          "reuse_rate": 1.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 26,
+          "deltaL": 3,
+          "R_L": 1.1153846153846154
+        },
+        {
+          "lam": 0.01,
+          "F": 0.875,
+          "L_total": 18,
+          "LG": 17,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 18,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.015,
+          "F": 0.875,
+          "L_total": 18,
+          "LG": 17,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 18,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.022,
+          "F": 0.75,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 10,
+          "deltaL": 0,
+          "R_L": 1.0
+        }
+      ],
+      "C_representative": {
+        "lam": 0.003,
+        "F": 1.0,
+        "L_total": 29,
+        "LG": 9,
+        "LD": 20,
+        "reuse_rate": 1.0,
+        "mean_macro_span": 4.0,
+        "Lstar": 26,
+        "deltaL": 3,
+        "R_L": 1.1153846153846154
+      }
+    },
+    {
+      "ttype": "periodic",
+      "L": 12,
+      "target": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "rule": "period-4 tile [1, 1, 0, 1]",
+      "full_enumeration": true,
+      "f_min": 0.0,
+      "frontier": [
+        [
+          2,
+          0.25
+        ],
+        [
+          7,
+          0.3333333333333333
+        ],
+        [
+          10,
+          0.4166666666666667
+        ],
+        [
+          18,
+          0.5
+        ],
+        [
+          20,
+          0.5833333333333334
+        ],
+        [
+          23,
+          0.75
+        ],
+        [
+          26,
+          0.8333333333333334
+        ],
+        [
+          29,
+          1.0
+        ]
+      ],
+      "Lstar_F1": 29,
+      "Lstar_F09": 29,
+      "A": {
+        "lam": null,
+        "F": 1.0,
+        "L_total": 44,
+        "LG": 43,
+        "LD": 1,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 29,
+        "deltaL": 15,
+        "R_L": 1.5172413793103448
+      },
+      "C_sweep": [
+        {
+          "lam": 0.0,
+          "F": 1.0,
+          "L_total": 67,
+          "LG": 11,
+          "LD": 56,
+          "reuse_rate": 8.0,
+          "mean_macro_span": 8.0,
+          "Lstar": 29,
+          "deltaL": 38,
+          "R_L": 2.310344827586207
+        },
+        {
+          "lam": 0.003,
+          "F": 1.0,
+          "L_total": 29,
+          "LG": 9,
+          "LD": 20,
+          "reuse_rate": 3.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 29,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.006,
+          "F": 1.0,
+          "L_total": 29,
+          "LG": 9,
+          "LD": 20,
+          "reuse_rate": 3.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 29,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.01,
+          "F": 1.0,
+          "L_total": 29,
+          "LG": 9,
+          "LD": 20,
+          "reuse_rate": 3.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 29,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.015,
+          "F": 1.0,
+          "L_total": 29,
+          "LG": 9,
+          "LD": 20,
+          "reuse_rate": 3.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 29,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.022,
+          "F": 0.4166666666666667,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 10,
+          "deltaL": 0,
+          "R_L": 1.0
+        }
+      ],
+      "C_representative": {
+        "lam": 0.003,
+        "F": 1.0,
+        "L_total": 29,
+        "LG": 9,
+        "LD": 20,
+        "reuse_rate": 3.0,
+        "mean_macro_span": 4.0,
+        "Lstar": 29,
+        "deltaL": 0,
+        "R_L": 1.0
+      }
+    },
+    {
+      "ttype": "structured",
+      "L": 12,
+      "target": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "rule": "tile(motif[1, 1, 0, 0]) ++ mirror(block[0, 1, 1, 0]) with 1 nuisance",
+      "full_enumeration": true,
+      "f_min": 0.0,
+      "frontier": [
+        [
+          2,
+          0.5833333333333334
+        ],
+        [
+          7,
+          0.6666666666666666
+        ],
+        [
+          10,
+          0.75
+        ],
+        [
+          24,
+          0.8333333333333334
+        ],
+        [
+          32,
+          0.9166666666666666
+        ],
+        [
+          37,
+          1.0
+        ]
+      ],
+      "Lstar_F1": 37,
+      "Lstar_F09": 32,
+      "A": {
+        "lam": null,
+        "F": 1.0,
+        "L_total": 44,
+        "LG": 43,
+        "LD": 1,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 37,
+        "deltaL": 7,
+        "R_L": 1.1891891891891893
+      },
+      "C_sweep": [
+        {
+          "lam": 0.0,
+          "F": 1.0,
+          "L_total": 104,
+          "LG": 17,
+          "LD": 87,
+          "reuse_rate": 1.0,
+          "mean_macro_span": 8.0,
+          "Lstar": 37,
+          "deltaL": 67,
+          "R_L": 2.810810810810811
+        },
+        {
+          "lam": 0.003,
+          "F": 1.0,
+          "L_total": 37,
+          "LG": 17,
+          "LD": 20,
+          "reuse_rate": 2.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 37,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.006,
+          "F": 0.75,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 10,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.01,
+          "F": 0.75,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 10,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.015,
+          "F": 0.75,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 10,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.022,
+          "F": 0.75,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 10,
+          "deltaL": 0,
+          "R_L": 1.0
+        }
+      ],
+      "C_representative": {
+        "lam": 0.003,
+        "F": 1.0,
+        "L_total": 37,
+        "LG": 17,
+        "LD": 20,
+        "reuse_rate": 2.0,
+        "mean_macro_span": 4.0,
+        "Lstar": 37,
+        "deltaL": 0,
+        "R_L": 1.0
+      }
+    },
+    {
+      "ttype": "unstructured",
+      "L": 12,
+      "target": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "rule": "uniform i.i.d. noise (no rule)",
+      "full_enumeration": true,
+      "f_min": 0.0,
+      "frontier": [
+        [
+          2,
+          0.5
+        ],
+        [
+          7,
+          0.5833333333333334
+        ],
+        [
+          10,
+          0.6666666666666666
+        ],
+        [
+          18,
+          0.75
+        ],
+        [
+          26,
+          0.8333333333333334
+        ],
+        [
+          32,
+          0.9166666666666666
+        ],
+        [
+          37,
+          1.0
+        ]
+      ],
+      "Lstar_F1": 37,
+      "Lstar_F09": 32,
+      "A": {
+        "lam": null,
+        "F": 1.0,
+        "L_total": 44,
+        "LG": 43,
+        "LD": 1,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 37,
+        "deltaL": 7,
+        "R_L": 1.1891891891891893
+      },
+      "C_sweep": [
+        {
+          "lam": 0.0,
+          "F": 1.0,
+          "L_total": 70,
+          "LG": 36,
+          "LD": 34,
+          "reuse_rate": 11.0,
+          "mean_macro_span": 8.0,
+          "Lstar": 37,
+          "deltaL": 33,
+          "R_L": 1.8918918918918919
+        },
+        {
+          "lam": 0.003,
+          "F": 1.0,
+          "L_total": 46,
+          "LG": 34,
+          "LD": 12,
+          "reuse_rate": 3.0,
+          "mean_macro_span": 2.0,
+          "Lstar": 37,
+          "deltaL": 9,
+          "R_L": 1.2432432432432432
+        },
+        {
+          "lam": 0.006,
+          "F": 1.0,
+          "L_total": 48,
+          "LG": 31,
+          "LD": 17,
+          "reuse_rate": 3.0,
+          "mean_macro_span": 3.0,
+          "Lstar": 37,
+          "deltaL": 11,
+          "R_L": 1.2972972972972974
+        },
+        {
+          "lam": 0.01,
+          "F": 0.75,
+          "L_total": 18,
+          "LG": 17,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 18,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.015,
+          "F": 0.6666666666666666,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 10,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.022,
+          "F": 0.6666666666666666,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 10,
+          "deltaL": 0,
+          "R_L": 1.0
+        }
+      ],
+      "C_representative": {
+        "lam": 0.003,
+        "F": 1.0,
+        "L_total": 46,
+        "LG": 34,
+        "LD": 12,
+        "reuse_rate": 3.0,
+        "mean_macro_span": 2.0,
+        "Lstar": 37,
+        "deltaL": 9,
+        "R_L": 1.2432432432432432
+      }
+    },
+    {
+      "ttype": "periodic",
+      "L": 16,
+      "target": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "rule": "period-4 tile [1, 1, 0, 1]",
+      "full_enumeration": false,
+      "f_min": 0.75,
+      "frontier": [
+        [
+          23,
+          0.75
+        ],
+        [
+          28,
+          0.8125
+        ],
+        [
+          31,
+          1.0
+        ]
+      ],
+      "Lstar_F1": 31,
+      "Lstar_F09": 31,
+      "A": {
+        "lam": null,
+        "F": 1.0,
+        "L_total": 58,
+        "LG": 57,
+        "LD": 1,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 31,
+        "deltaL": 27,
+        "R_L": 1.8709677419354838
+      },
+      "C_sweep": [
+        {
+          "lam": 0.0,
+          "F": 1.0,
+          "L_total": 43,
+          "LG": 9,
+          "LD": 34,
+          "reuse_rate": 3.0,
+          "mean_macro_span": 8.0,
+          "Lstar": 31,
+          "deltaL": 12,
+          "R_L": 1.3870967741935485
+        },
+        {
+          "lam": 0.003,
+          "F": 1.0,
+          "L_total": 31,
+          "LG": 11,
+          "LD": 20,
+          "reuse_rate": 5.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 31,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.006,
+          "F": 1.0,
+          "L_total": 31,
+          "LG": 11,
+          "LD": 20,
+          "reuse_rate": 4.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 31,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.01,
+          "F": 1.0,
+          "L_total": 31,
+          "LG": 11,
+          "LD": 20,
+          "reuse_rate": 6.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 31,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.015,
+          "F": 1.0,
+          "L_total": 31,
+          "LG": 11,
+          "LD": 20,
+          "reuse_rate": 7.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 31,
+          "deltaL": 0,
+          "R_L": 1.0
+        },
+        {
+          "lam": 0.022,
+          "F": 1.0,
+          "L_total": 31,
+          "LG": 11,
+          "LD": 20,
+          "reuse_rate": 7.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 31,
+          "deltaL": 0,
+          "R_L": 1.0
+        }
+      ],
+      "C_representative": {
+        "lam": 0.003,
+        "F": 1.0,
+        "L_total": 31,
+        "LG": 11,
+        "LD": 20,
+        "reuse_rate": 5.0,
+        "mean_macro_span": 4.0,
+        "Lstar": 31,
+        "deltaL": 0,
+        "R_L": 1.0
+      }
+    },
+    {
+      "ttype": "structured",
+      "L": 16,
+      "target": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "rule": "tile(motif[1, 1, 0, 0]) ++ mirror(block[0, 1, 1, 0]) with 2 nuisance",
+      "full_enumeration": false,
+      "f_min": 0.75,
+      "frontier": [
+        [
+          29,
+          0.8125
+        ],
+        [
+          34,
+          0.875
+        ],
+        [
+          35,
+          0.9375
+        ],
+        [
+          37,
+          1.0
+        ]
+      ],
+      "Lstar_F1": 37,
+      "Lstar_F09": 35,
+      "A": {
+        "lam": null,
+        "F": 1.0,
+        "L_total": 58,
+        "LG": 57,
+        "LD": 1,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 37,
+        "deltaL": 21,
+        "R_L": 1.5675675675675675
+      },
+      "C_sweep": [
+        {
+          "lam": 0.0,
+          "F": 1.0,
+          "L_total": 136,
+          "LG": 50,
+          "LD": 86,
+          "reuse_rate": 52.0,
+          "mean_macro_span": 11.666666666666666,
+          "Lstar": 37,
+          "deltaL": 99,
+          "R_L": 3.675675675675676
+        },
+        {
+          "lam": 0.003,
+          "F": 1.0,
+          "L_total": 43,
+          "LG": 26,
+          "LD": 17,
+          "reuse_rate": 5.0,
+          "mean_macro_span": 3.0,
+          "Lstar": 37,
+          "deltaL": 6,
+          "R_L": 1.162162162162162
+        },
+        {
+          "lam": 0.006,
+          "F": 1.0,
+          "L_total": 55,
+          "LG": 43,
+          "LD": 12,
+          "reuse_rate": 2.0,
+          "mean_macro_span": 2.0,
+          "Lstar": 37,
+          "deltaL": 18,
+          "R_L": 1.4864864864864864
+        },
+        {
+          "lam": 0.01,
+          "F": 0.8125,
+          "L_total": 32,
+          "LG": 12,
+          "LD": 20,
+          "reuse_rate": 3.0,
+          "mean_macro_span": 4.0,
+          "Lstar": 29,
+          "deltaL": 3,
+          "R_L": 1.103448275862069
+        },
+        {
+          "lam": 0.015,
+          "F": 0.5,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": null,
+          "deltaL": null,
+          "R_L": null
+        },
+        {
+          "lam": 0.022,
+          "F": 0.4375,
+          "L_total": 7,
+          "LG": 6,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": null,
+          "deltaL": null,
+          "R_L": null
+        }
+      ],
+      "C_representative": {
+        "lam": 0.003,
+        "F": 1.0,
+        "L_total": 43,
+        "LG": 26,
+        "LD": 17,
+        "reuse_rate": 5.0,
+        "mean_macro_span": 3.0,
+        "Lstar": 37,
+        "deltaL": 6,
+        "R_L": 1.162162162162162
+      }
+    },
+    {
+      "ttype": "unstructured",
+      "L": 16,
+      "target": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "rule": "uniform i.i.d. noise (no rule)",
+      "full_enumeration": false,
+      "f_min": 0.75,
+      "frontier": [
+        [
+          26,
+          0.75
+        ],
+        [
+          29,
+          0.8125
+        ],
+        [
+          34,
+          0.875
+        ],
+        [
+          38,
+          0.9375
+        ],
+        [
+          46,
+          1.0
+        ]
+      ],
+      "Lstar_F1": 46,
+      "Lstar_F09": 38,
+      "A": {
+        "lam": null,
+        "F": 1.0,
+        "L_total": 58,
+        "LG": 57,
+        "LD": 1,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 46,
+        "deltaL": 12,
+        "R_L": 1.2608695652173914
+      },
+      "C_sweep": [
+        {
+          "lam": 0.0,
+          "F": 1.0,
+          "L_total": 79,
+          "LG": 39,
+          "LD": 40,
+          "reuse_rate": 1.0,
+          "mean_macro_span": 7.0,
+          "Lstar": 46,
+          "deltaL": 33,
+          "R_L": 1.7173913043478262
+        },
+        {
+          "lam": 0.003,
+          "F": 1.0,
+          "L_total": 63,
+          "LG": 54,
+          "LD": 9,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": 46,
+          "deltaL": 17,
+          "R_L": 1.3695652173913044
+        },
+        {
+          "lam": 0.006,
+          "F": 0.875,
+          "L_total": 39,
+          "LG": 22,
+          "LD": 17,
+          "reuse_rate": 5.0,
+          "mean_macro_span": 3.0,
+          "Lstar": 34,
+          "deltaL": 5,
+          "R_L": 1.1470588235294117
+        },
+        {
+          "lam": 0.01,
+          "F": 0.625,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": null,
+          "deltaL": null,
+          "R_L": null
+        },
+        {
+          "lam": 0.015,
+          "F": 0.625,
+          "L_total": 10,
+          "LG": 9,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": null,
+          "deltaL": null,
+          "R_L": null
+        },
+        {
+          "lam": 0.022,
+          "F": 0.5625,
+          "L_total": 7,
+          "LG": 6,
+          "LD": 1,
+          "reuse_rate": 0.0,
+          "mean_macro_span": 0.0,
+          "Lstar": null,
+          "deltaL": null,
+          "R_L": null
+        }
+      ],
+      "C_representative": {
+        "lam": 0.003,
+        "F": 1.0,
+        "L_total": 63,
+        "LG": 54,
+        "LD": 9,
+        "reuse_rate": 0.0,
+        "mean_macro_span": 0.0,
+        "Lstar": 46,
+        "deltaL": 17,
+        "R_L": 1.3695652173913044
+      }
+    }
+  ],
+  "runtime_seconds": 412.4901475906372
+}

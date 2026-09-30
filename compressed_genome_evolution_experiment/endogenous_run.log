@@ -1,0 +1,32 @@
+exp592 Endogenous Interaction Discovery  p=4 causal=3 nuisance=2 world_seeds=[1, 2, 3, 4, 5, 6]
+world: L=20  causal=[[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11]]  nuisance=[[12, 13, 14, 15], [16, 17, 18, 19]]
+==========================================================================
+STRUCTURE  (Pi* revealed only now)
+==========================================================================
+  ARI(learned,Pi*) = 1.000 +-0.000   prec=1.000 rec=1.000 nuisance_grouped=0.00
+  ARI(naive,  Pi*) = 0.716 +-0.000   prec=0.600 rec=1.000 nuisance_grouped=1.00
+  ARI(random, Pi*) = -0.023
+==========================================================================
+FUNCTION  (held-out goals: block targets unseen in learning)
+==========================================================================
+       A_bit: T0.95 steps=393 success=1.00
+     A_block: T0.95 steps=309 success=1.00
+   C_learned: T0.95 steps=309 success=1.00
+           R: T0.95 steps=789 success=1.00
+       naive: T0.95 steps=309 success=1.00
+==========================================================================
+PRE-REGISTERED DECISION
+==========================================================================
+  ARI(learned)=1.000 >> ARI(random)=-0.023: True
+  T0.95(C_learned)=309 < T0.95(A_bit)=393: True
+  T0.95(C_learned)=309 ~= T0.95(A_block oracle)=309: True
+  nuisance: learned groups=0.00 vs naive groups=1.00: True
+
+  CORE (interaction structure discovered blind, and it is causal & functional): True
+example learned partition (world seed 1):
+  learned = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12], [13], [14], [15], [16], [17], [18], [19]]
+  naive   = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15], [16, 17, 18, 19]]
+  candidate relevance = [([0, 1, 2, 3], 0.308), ([4, 5, 6, 7], 0.315), ([8, 9, 10, 11], 0.319), ([12, 13, 14, 15], 0.0), ([16, 17, 18, 19], 0.0)]
+figure: endogenous.png
+==========================================================================
+done in 31.1s

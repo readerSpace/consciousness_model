@@ -1,0 +1,58 @@
+{
+  "primitive_directions": [
+    "+x",
+    "-x",
+    "+y",
+    "-y"
+  ],
+  "composed_path_count": 108,
+  "zero_displacement_paths": [
+    "compose(+x,+y,-x,-y)",
+    "compose(+x,-y,-x,+y)",
+    "compose(-x,+y,+x,-y)",
+    "compose(-x,-y,+x,+y)",
+    "compose(+y,+x,-y,-x)",
+    "compose(+y,-x,-y,+x)",
+    "compose(-y,+x,+y,-x)",
+    "compose(-y,-x,+y,+x)"
+  ],
+  "compressed_concepts": [
+    "closed_loop"
+  ],
+  "selected_paths": [
+    "electric_energy",
+    "compose(+x,+y,-x,-y)",
+    "compose(-x,+y,+x,+y)"
+  ],
+  "selected_closed_count": 1,
+  "gauge_invariance_precision": 1.0,
+  "gauge_invariance_recall": 1.0,
+  "size_results": [
+    {
+      "size": 8,
+      "rmse": 0.13112197937687337,
+      "concept_seconds": 0.00016729999333620071
+    },
+    {
+      "size": 10,
+      "rmse": 0.11624583943103707,
+      "concept_seconds": 0.0001436000457033515
+    },
+    {
+      "size": 12,
+      "rmse": 0.09227560917567647,
+      "concept_seconds": 0.00015029998030513525
+    },
+    {
+      "size": 16,
+      "rmse": 0.06239315344396771,
+      "concept_seconds": 0.0001281000440940261
+    }
+  ],
+  "closed_path_ablation_rmse_increase": -0.007674425832494808,
+  "broadcast_concepts": [
+    "episode:composed:is:electric_energy",
+    "episode:composed:is:compose(+x,+y,-x,-y)",
+    "episode:composed:is:compose(-x,+y,+x,+y)"
+  ]
+}

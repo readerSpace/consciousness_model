@@ -1,0 +1,1397 @@
+[OK ] shell : 5.1.26100.9444 on Microsoft Windows NT 10.0.26200.0
+[OK ] workspace : C:\Users\neko5\Documents\projects\意識モデル\coding_world_benchmark (test files: 55)
+[OK ] python : py -3 -> Python 3.13.2
+[OK ] pytest : pytest 9.1.1
+[OK ] suite : passed=272 failed=18 errors=13 exit=1
+
+........................................................................ [ 23%]
+...............................................................F..FFF... [ 47%]
+...EEEEEE............................................................... [ 71%]
+..............................FF..FF.FF.FF..FF.FF.FEEFEEEEE............. [ 95%]
+...............                                                          [100%]
+=================================== ERRORS ====================================
+__ ERROR at setup of test_behavioural_detection_generalizes_to_unseen_faults __
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def comparison(tmp_path_factory):
+>       return compare_known_and_holdout(tmp_path_factory.mktemp("l861"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_holdout_faults_l861_experiment.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\holdout_faults_l861_experiment.py:328: in compare_known_and_holdout
+    known = run_self_modification_benchmark(workspace / "known", FAULT_FIXTURES, verifier)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8610/known/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+__ ERROR at setup of test_repair_does_not_generalize_and_the_gap_is_reported __
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def comparison(tmp_path_factory):
+>       return compare_known_and_holdout(tmp_path_factory.mktemp("l861"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_holdout_faults_l861_experiment.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\holdout_faults_l861_experiment.py:328: in compare_known_and_holdout
+    known = run_self_modification_benchmark(workspace / "known", FAULT_FIXTURES, verifier)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8610/known/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_ ERROR at setup of test_cold_measurement_is_unchanged_or_the_holdout_has_been_burned _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def comparison(tmp_path_factory):
+>       return compare_known_and_holdout(tmp_path_factory.mktemp("l861"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_holdout_faults_l861_experiment.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\holdout_faults_l861_experiment.py:328: in compare_known_and_holdout
+    known = run_self_modification_benchmark(workspace / "known", FAULT_FIXTURES, verifier)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8610/known/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_____ ERROR at setup of test_no_wrong_repair_survives_the_regression_gate _____
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def comparison(tmp_path_factory):
+>       return compare_known_and_holdout(tmp_path_factory.mktemp("l861"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_holdout_faults_l861_experiment.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\holdout_faults_l861_experiment.py:328: in compare_known_and_holdout
+    known = run_self_modification_benchmark(workspace / "known", FAULT_FIXTURES, verifier)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8610/known/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+______ ERROR at setup of test_misdiagnosis_is_caught_rather_than_applied ______
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def comparison(tmp_path_factory):
+>       return compare_known_and_holdout(tmp_path_factory.mktemp("l861"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_holdout_faults_l861_experiment.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\holdout_faults_l861_experiment.py:328: in compare_known_and_holdout
+    known = run_self_modification_benchmark(workspace / "known", FAULT_FIXTURES, verifier)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8610/known/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+____ ERROR at setup of test_holdout_control_is_neither_detected_nor_edited ____
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def comparison(tmp_path_factory):
+>       return compare_known_and_holdout(tmp_path_factory.mktemp("l861"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_holdout_faults_l861_experiment.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\holdout_faults_l861_experiment.py:328: in compare_known_and_holdout
+    known = run_self_modification_benchmark(workspace / "known", FAULT_FIXTURES, verifier)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8610/known/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+___ ERROR at setup of test_known_faults_recover_without_human_intervention ____
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def benchmark(tmp_path_factory):
+>       return run_self_modification_benchmark(tmp_path_factory.mktemp("l86"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8611/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_ ERROR at setup of test_repair_coverage_and_decision_accuracy_are_scored_separately _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def benchmark(tmp_path_factory):
+>       return run_self_modification_benchmark(tmp_path_factory.mktemp("l86"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8611/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+____ ERROR at setup of test_each_repair_went_through_the_semantic_compiler ____
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def benchmark(tmp_path_factory):
+>       return run_self_modification_benchmark(tmp_path_factory.mktemp("l86"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8611/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_ ERROR at setup of test_routing_repair_wires_the_existing_capability_rather_than_a_stub _
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def benchmark(tmp_path_factory):
+>       return run_self_modification_benchmark(tmp_path_factory.mktemp("l86"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8611/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+___ ERROR at setup of test_out_of_scope_fault_is_refused_instead_of_guessed ___
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def benchmark(tmp_path_factory):
+>       return run_self_modification_benchmark(tmp_path_factory.mktemp("l86"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8611/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+__________ ERROR at setup of test_healthy_workspace_is_never_edited ___________
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def benchmark(tmp_path_factory):
+>       return run_self_modification_benchmark(tmp_path_factory.mktemp("l86"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8611/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+___ ERROR at setup of test_report_states_metrics_and_interpretation_limits ____
+
+tmp_path_factory = TempPathFactory(_given_basetemp=None, _trace=<pluggy._tracing.TagTracerSub object at 0x00000204F02ECC30>, _basetemp=WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope="module")
+    def benchmark(tmp_path_factory):
+>       return run_self_modification_benchmark(tmp_path_factory.mktemp("l86"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\self_modification_l86_experiment.py:729: in run_self_modification_benchmark
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:729: in <genexpr>
+    outcomes = tuple(run_fixture(Path(workspace) / fixture.id, fixture, verifier) for fixture in fixtures)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+coding_world_benchmark\self_modification_l86_experiment.py:670: in run_fixture
+    observation = observe_fault(root, (PROBE,))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/l8611/F1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+================================== FAILURES ===================================
+______________ test_holdout_isolates_exactly_one_regression[H1] _______________
+
+fixture = HoldoutFixture(id='H1', capability='EXECUTE', break_shape='subprocess の結果を受け取るが捨てている', healthy_module='"""Execute capa...lated_request_keeps_previous_behaviour():\n    assert handle_request("unrelated request").startswith("search-hit:")\n')
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_holdout_isolates_exactly_0')
+
+    @pytest.mark.parametrize("fixture", HOLDOUT_FIXTURES, ids=[item.id for item in HOLDOUT_FIXTURES])
+    def test_holdout_isolates_exactly_one_regression(fixture, tmp_path: Path):
+>       healthy_passes, probe_fails, baseline_holds = verify_holdout_is_well_formed(tmp_path, fixture)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_holdout_faults_l861_experiment.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\holdout_faults_l861_experiment.py:279: in verify_holdout_is_well_formed
+    probe_fails = observe_fault(broken_root, (PROBE,)).detected
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_holdout_isolates_exactly_0/broken')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+______________ test_holdout_isolates_exactly_one_regression[H4] _______________
+
+fixture = HoldoutFixture(id='H4', capability='SUMMARIZE', break_shape='ContextGraph は使うが無関係 node を絞り込まない', healthy_module='"""Su...lated_request_keeps_previous_behaviour():\n    assert handle_request("unrelated request").startswith("search-hit:")\n')
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_holdout_isolates_exactly_3')
+
+    @pytest.mark.parametrize("fixture", HOLDOUT_FIXTURES, ids=[item.id for item in HOLDOUT_FIXTURES])
+    def test_holdout_isolates_exactly_one_regression(fixture, tmp_path: Path):
+>       healthy_passes, probe_fails, baseline_holds = verify_holdout_is_well_formed(tmp_path, fixture)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_holdout_faults_l861_experiment.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\holdout_faults_l861_experiment.py:279: in verify_holdout_is_well_formed
+    probe_fails = observe_fault(broken_root, (PROBE,)).detected
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_holdout_isolates_exactly_3/broken')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+______________ test_holdout_isolates_exactly_one_regression[H5] _______________
+
+fixture = HoldoutFixture(id='H5', capability='MATH_DERIVATION', break_shape='離散更新式は返すが governing equation へ抽象化しない', healthy_modu...lated_request_keeps_previous_behaviour():\n    assert handle_request("unrelated request").startswith("search-hit:")\n')
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_holdout_isolates_exactly_4')
+
+    @pytest.mark.parametrize("fixture", HOLDOUT_FIXTURES, ids=[item.id for item in HOLDOUT_FIXTURES])
+    def test_holdout_isolates_exactly_one_regression(fixture, tmp_path: Path):
+>       healthy_passes, probe_fails, baseline_holds = verify_holdout_is_well_formed(tmp_path, fixture)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_holdout_faults_l861_experiment.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\holdout_faults_l861_experiment.py:279: in verify_holdout_is_well_formed
+    probe_fails = observe_fault(broken_root, (PROBE,)).detected
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_holdout_isolates_exactly_4/broken')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+______________ test_holdout_isolates_exactly_one_regression[H6] _______________
+
+fixture = HoldoutFixture(id='H6', capability='EXTERNAL_REPAIR_PROPOSAL', break_shape='patch は当てるが regression を実行しない', healthy_mo...lated_request_keeps_previous_behaviour():\n    assert handle_request("unrelated request").startswith("search-hit:")\n')
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_holdout_isolates_exactly_5')
+
+    @pytest.mark.parametrize("fixture", HOLDOUT_FIXTURES, ids=[item.id for item in HOLDOUT_FIXTURES])
+    def test_holdout_isolates_exactly_one_regression(fixture, tmp_path: Path):
+>       healthy_passes, probe_fails, baseline_holds = verify_holdout_is_well_formed(tmp_path, fixture)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_holdout_faults_l861_experiment.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coding_world_benchmark\holdout_faults_l861_experiment.py:279: in verify_holdout_is_well_formed
+    probe_fails = observe_fault(broken_root, (PROBE,)).detected
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_holdout_isolates_exactly_5/broken')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+__________ test_fixture_probe_state_matches_its_declared_health[F1] ___________
+
+identifier = 'F1'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match0')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_fixture_probe_state_matches_its_declared_health(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       observation = observe_fault(tmp_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match0')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+__________ test_fixture_probe_state_matches_its_declared_health[F2] ___________
+
+identifier = 'F2'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match1')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_fixture_probe_state_matches_its_declared_health(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       observation = observe_fault(tmp_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+__________ test_fixture_probe_state_matches_its_declared_health[F5] ___________
+
+identifier = 'F5'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match4')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_fixture_probe_state_matches_its_declared_health(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       observation = observe_fault(tmp_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match4')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+__________ test_fixture_probe_state_matches_its_declared_health[F6] ___________
+
+identifier = 'F6'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match5')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_fixture_probe_state_matches_its_declared_health(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       observation = observe_fault(tmp_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match5')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+__________ test_fixture_probe_state_matches_its_declared_health[F8] ___________
+
+identifier = 'F8'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match7')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_fixture_probe_state_matches_its_declared_health(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       observation = observe_fault(tmp_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match7')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+__________ test_fixture_probe_state_matches_its_declared_health[F9] ___________
+
+identifier = 'F9'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match8')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_fixture_probe_state_matches_its_declared_health(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       observation = observe_fault(tmp_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_fixture_probe_state_match8')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_________ test_diagnosis_is_derived_from_repository_evidence_only[F1] _________
+
+identifier = 'F1'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from0')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_diagnosis_is_derived_from_repository_evidence_only(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       diagnosis = diagnose_workspace(tmp_path, observe_fault(tmp_path))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from0')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_________ test_diagnosis_is_derived_from_repository_evidence_only[F2] _________
+
+identifier = 'F2'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from1')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_diagnosis_is_derived_from_repository_evidence_only(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       diagnosis = diagnose_workspace(tmp_path, observe_fault(tmp_path))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from1')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_________ test_diagnosis_is_derived_from_repository_evidence_only[F5] _________
+
+identifier = 'F5'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from4')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_diagnosis_is_derived_from_repository_evidence_only(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       diagnosis = diagnose_workspace(tmp_path, observe_fault(tmp_path))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from4')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_________ test_diagnosis_is_derived_from_repository_evidence_only[F6] _________
+
+identifier = 'F6'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from5')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_diagnosis_is_derived_from_repository_evidence_only(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       diagnosis = diagnose_workspace(tmp_path, observe_fault(tmp_path))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from5')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_________ test_diagnosis_is_derived_from_repository_evidence_only[F8] _________
+
+identifier = 'F8'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from7')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_diagnosis_is_derived_from_repository_evidence_only(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       diagnosis = diagnose_workspace(tmp_path, observe_fault(tmp_path))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from7')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_________ test_diagnosis_is_derived_from_repository_evidence_only[F9] _________
+
+identifier = 'F9'
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from8')
+
+    @pytest.mark.parametrize("identifier", [item.id for item in FAULT_FIXTURES])
+    def test_diagnosis_is_derived_from_repository_evidence_only(identifier: str, tmp_path: Path):
+        fixture = _fixture(identifier)
+        build_fixture(tmp_path, fixture)
+    
+>       diagnosis = diagnose_workspace(tmp_path, observe_fault(tmp_path))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_diagnosis_is_derived_from8')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+_____ test_generated_proposal_is_plain_language_and_names_the_real_target _____
+
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_generated_proposal_is_pla0')
+
+    def test_generated_proposal_is_plain_language_and_names_the_real_target(tmp_path: Path):
+        build_fixture(tmp_path, _fixture("F1"))
+>       diagnosis = diagnose_workspace(tmp_path, observe_fault(tmp_path))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_generated_proposal_is_pla0')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+______________ test_specific_evidence_outranks_generic_evidence _______________
+
+tmp_path = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_specific_evidence_outrank0')
+
+    def test_specific_evidence_outranks_generic_evidence(tmp_path: Path):
+        build_fixture(tmp_path, _fixture("F8"))
+    
+>       candidates = diagnose_candidates(tmp_path, observe_fault(tmp_path))
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^
+
+coding_world_benchmark\test_self_modification_l86_experiment.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/neko5/AppData/Local/Temp/pytest-of-neko5/pytest-296/test_specific_evidence_outrank0')
+tests = ('test_behavior.py',)
+
+    def observe_fault(root: Path, tests: tuple[str, ...] = (PROBE,)) -> FaultObservation:
+        """A fault is *detected* when the behavioural probe fails on the real workspace."""
+        command = ["python", "-m", "pytest", "-q", *tests]
+        completed = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=300, check=False)
+>       output = (completed.stdout + completed.stderr)[-4000:]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+coding_world_benchmark\self_modification_l86_experiment.py:287: TypeError
+============================== warnings summary ===============================
+coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_holdout_isolates_exactly_one_regression[H1]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-427 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x86 in position 337: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_holdout_isolates_exactly_one_regression[H4]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-443 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x84 in position 349: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_holdout_isolates_exactly_one_regression[H5]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-447 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x87 in position 357: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_holdout_isolates_exactly_one_regression[H6]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-451 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x81 in position 339: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_behavioural_detection_generalizes_to_unseen_faults
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-453 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x81 in position 327: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F1]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-786 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x81 in position 327: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F2]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-788 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x86 in position 325: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F5]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-794 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x87 in position 345: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F6]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-796 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x81 in position 330: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F8]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-800 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x98 in position 344: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F9]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-802 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x84 in position 337: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F1]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-806 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x81 in position 327: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F2]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-808 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x86 in position 325: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F5]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-814 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x87 in position 345: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F6]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-816 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x81 in position 330: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F8]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-820 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x98 in position 344: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F9]
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-822 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x84 in position 337: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_generated_proposal_is_plain_language_and_names_the_real_target
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-826 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x81 in position 327: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_known_faults_recover_without_human_intervention
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-828 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x81 in position 327: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+coding_world_benchmark/test_self_modification_l86_experiment.py::test_specific_evidence_outranks_generic_evidence
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-830 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
+      self.run()
+      ~~~~~~~~^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
+      self._target(*self._args, **self._kwargs)
+      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 1611, in _readerthread
+      buffer.append(fh.read())
+                    ~~~~~~~^^
+  UnicodeDecodeError: 'cp932' codec can't decode byte 0x98 in position 344: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+..\..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\cacheprovider.py:469
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\cacheprovider.py:469: PytestCacheWarning: could not create cache path C:\Users\neko5\Documents\projects\意識モデル\.pytest_cache\v\cache\nodeids: [WinError 5] アクセスが拒否されました。: 'C:\\Users\\neko5\\Documents\\projects\\意識モデル\\.pytest_cache\\v\\cache'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+..\..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\cacheprovider.py:423
+  C:\Users\neko5\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\cacheprovider.py:423: PytestCacheWarning: could not create cache path C:\Users\neko5\Documents\projects\意識モデル\.pytest_cache\v\cache\lastfailed: [WinError 5] アクセスが拒否されました。: 'C:\\Users\\neko5\\Documents\\projects\\意識モデル\\.pytest_cache\\v\\cache'
+    config.cache.set("cache/lastfailed", self.lastfailed)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_holdout_isolates_exactly_one_regression[H1]
+FAILED coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_holdout_isolates_exactly_one_regression[H4]
+FAILED coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_holdout_isolates_exactly_one_regression[H5]
+FAILED coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_holdout_isolates_exactly_one_regression[H6]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F1]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F2]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F5]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F6]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F8]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_fixture_probe_state_matches_its_declared_health[F9]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F1]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F2]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F5]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F6]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F8]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_diagnosis_is_derived_from_repository_evidence_only[F9]
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_generated_proposal_is_plain_language_and_names_the_real_target
+FAILED coding_world_benchmark/test_self_modification_l86_experiment.py::test_specific_evidence_outranks_generic_evidence
+ERROR coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_behavioural_detection_generalizes_to_unseen_faults
+ERROR coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_repair_does_not_generalize_and_the_gap_is_reported
+ERROR coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_cold_measurement_is_unchanged_or_the_holdout_has_been_burned
+ERROR coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_no_wrong_repair_survives_the_regression_gate
+ERROR coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_misdiagnosis_is_caught_rather_than_applied
+ERROR coding_world_benchmark/test_holdout_faults_l861_experiment.py::test_holdout_control_is_neither_detected_nor_edited
+ERROR coding_world_benchmark/test_self_modification_l86_experiment.py::test_known_faults_recover_without_human_intervention
+ERROR coding_world_benchmark/test_self_modification_l86_experiment.py::test_repair_coverage_and_decision_accuracy_are_scored_separately
+ERROR coding_world_benchmark/test_self_modification_l86_experiment.py::test_each_repair_went_through_the_semantic_compiler
+ERROR coding_world_benchmark/test_self_modification_l86_experiment.py::test_routing_repair_wires_the_existing_capability_rather_than_a_stub
+ERROR coding_world_benchmark/test_self_modification_l86_experiment.py::test_out_of_scope_fault_is_refused_instead_of_guessed
+ERROR coding_world_benchmark/test_self_modification_l86_experiment.py::test_healthy_workspace_is_never_edited
+ERROR coding_world_benchmark/test_self_modification_l86_experiment.py::test_report_states_metrics_and_interpretation_limits
+18 failed, 272 passed, 22 warnings, 13 errors in 65.15s (0:01:05)

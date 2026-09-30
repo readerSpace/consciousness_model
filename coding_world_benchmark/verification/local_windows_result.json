@@ -1,0 +1,37 @@
+{
+    "environment":  "local_windows",
+    "device":  "SATOSHI3",
+    "date":  "2026-09-14",
+    "timestamp":  "2026-09-14T06:19:00Z",
+    "repository":  "C:\\Users\\neko5\\Documents\\projects\\意識モデル",
+    "test_file_count":  55,
+    "python_version":  "Python 3.13.2",
+    "pytest_version":  "pytest 9.1.1",
+    "layers":  {
+                   "shell":  {
+                                 "ok":  true,
+                                 "detail":  "5.1.26100.9444 on Microsoft Windows NT 10.0.26200.0"
+                             },
+                   "workspace":  {
+                                     "ok":  true,
+                                     "detail":  "C:\\Users\\neko5\\Documents\\projects\\意識モデル\\coding_world_benchmark (test files: 55)"
+                                 },
+                   "python":  {
+                                  "ok":  true,
+                                  "detail":  "py -3 -\u003e Python 3.13.2"
+                              },
+                   "pytest":  {
+                                  "ok":  true,
+                                  "detail":  "pytest 9.1.1"
+                              },
+                   "suite":  {
+                                 "ok":  true,
+                                 "detail":  "passed=272 failed=18 errors=13 exit=1"
+                             }
+               },
+    "passed":  272,
+    "failed":  18,
+    "errors":  13,
+    "exit_code":  1,
+    "verified":  true
+}

@@ -1,0 +1,8 @@
+{
+  "capacity": 2,
+  "selection": "workspace",
+  "base_target_speed_kmh": 30.0,
+  "seed": 0,
+  "record_every": 10,
+  "record_path": "results/k2_workspace.json"
+}
