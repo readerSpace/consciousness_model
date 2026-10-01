@@ -1,0 +1,59 @@
+exp599a Codec Evolution  A=2 C_opcode=48 k=3 motif_len=4 seeds=[1, 2, 3]
+==============================================================================
+BLOCK 1  three-world language selection (C_opcode=48)
+==============================================================================
+        flat_REP: D0=  29 D1=  77 -> D0  (expected D0) OK
+   compositional: D0= 751 D1= 677 -> D1  (expected D1) OK
+          random: D0= 302 D1= 350 -> D0  (expected D0) OK
+  -> selection matches the predicted table for all worlds? True
+==============================================================================
+BLOCK 2  exact MDL crossover over number of distinct compositions
+==============================================================================
+  n_comp= 2: cost_D0=  92 cost_D1= 126 margin= -34 -> D0
+  n_comp= 4: cost_D0= 167 cost_D1= 189 margin= -22 -> D0
+  n_comp= 6: cost_D0= 223 cost_D1= 233 margin= -10 -> D0
+  n_comp= 8: cost_D0= 306 cost_D1= 304 margin=  +2 -> D1
+  n_comp=12: cost_D0= 446 cost_D1= 420 margin= +26 -> D1
+  n_comp=16: cost_D0= 607 cost_D1= 557 margin= +50 -> D1
+  n_comp=20: cost_D0= 751 cost_D1= 677 margin= +74 -> D1
+  n_comp=30: cost_D0=1142 cost_D1=1008 margin=+134 -> D1
+  -> n_comp*_MDL = 8
+==============================================================================
+BLOCK 3  evolution with the LANGUAGE as a selected trait -> n_evo
+==============================================================================
+  n_comp= 2: frac_champion_D1=0.00
+  n_comp= 4: frac_champion_D1=0.00
+  n_comp= 6: frac_champion_D1=0.00
+  n_comp= 8: frac_champion_D1=0.67
+  n_comp=12: frac_champion_D1=1.00
+  n_comp=16: frac_champion_D1=1.00
+  n_comp=20: frac_champion_D1=1.00
+  n_comp=30: frac_champion_D1=1.00
+  -> n_comp_evo (first >=0.5) = 8
+==============================================================================
+BLOCK 4  the opcode price sets the adoption point: n*_MDL(C_opcode)
+==============================================================================
+  C_opcode= 24: n_comp*_MDL = 4
+  C_opcode= 48: n_comp*_MDL = 8
+  C_opcode= 72: n_comp*_MDL = 12
+  C_opcode= 96: n_comp*_MDL = 16
+  -> a costlier opcode demands more compositional pressure to adopt? True
+==============================================================================
+BLOCK 5  verdict -- is the representation LANGUAGE itself selected?
+==============================================================================
+  world_selection_matches_table       : True
+  mdl_crossover_exists                : True
+  evolution_adopts_D1                 : True
+  n_comp_star_MDL                     : 8
+  n_comp_evo                          : 8
+  evo_tracks_MDL                      : True
+  opcode_price_monotone               : True
+  REPRESENTATION_LANGUAGE_IS_SELECTED : True
+  --------------------------------------------------------------
+  ==> representation language itself is selected to match the world: True
+  ==> evolution adopts COMPOSE at n_comp=8, exact MDL at n_comp=8: when the environment's compositional statistics apply
+      enough pressure, the language that makes composition a cheap
+      PRIMITIVE is selected -- the exp598 codec bottleneck is solved by
+      evolving the representation language, not by more search.
+plot written: True
+total time: 8.4s

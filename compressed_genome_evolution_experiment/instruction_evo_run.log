@@ -1,0 +1,38 @@
+exp599b Emergent Genetic Instruction Set  primitive grammar={LITERAL,REF,CONCAT,REPEAT}
+==============================================================================
+BLOCK 1  instruction-birth OFF / ON / oracle across three worlds
+==============================================================================
+        flat_REP: fixed= 29 birth_ON= 29 oracle= 29 born=False compose_equiv=False
+   compositional: fixed=306 birth_ON=264 oracle=264 born=True compose_equiv=True
+          random: fixed=302 birth_ON=302 oracle=302 born=False compose_equiv=False
+==============================================================================
+BLOCK 2  exact MDL threshold for primitive-defined instruction birth
+==============================================================================
+  n_comp= 1: fixed= 48 ON= 48 oracle= 48 L(D)= 0 L(G|D)= 48 born=False
+  n_comp= 2: fixed= 92 ON= 86 oracle= 86 L(D)= 8 L(G|D)= 78 born=True
+  n_comp= 4: fixed=167 ON=149 oracle=149 L(D)= 8 L(G|D)=141 born=True
+  n_comp= 6: fixed=223 ON=193 oracle=193 L(D)= 8 L(G|D)=185 born=True
+  n_comp= 8: fixed=306 ON=264 oracle=264 L(D)= 8 L(G|D)=256 born=True
+  n_comp=12: fixed=446 ON=380 oracle=380 L(D)= 8 L(G|D)=372 born=True
+  -> n_opcode_birth*_MDL = 2
+==============================================================================
+BLOCK 3  grammar-mutation proposal selection -> n_opcode_birth_evo
+==============================================================================
+  n_comp= 1: fraction with retained born opcode=0.00
+  n_comp= 2: fraction with retained born opcode=1.00
+  n_comp= 4: fraction with retained born opcode=1.00
+  n_comp= 6: fraction with retained born opcode=1.00
+  n_comp= 8: fraction with retained born opcode=1.00
+  n_comp=12: fraction with retained born opcode=1.00
+  -> n_opcode_birth_evo = 2
+==============================================================================
+BLOCK 4  conservative verdict
+==============================================================================
+  controls_match_prediction                    : True
+  invented_opcode_is_compose_equivalent        : True
+  n_opcode_birth_MDL                           : 2
+  n_opcode_birth_evo                           : 2
+  evo_tracks_MDL                               : True
+  PRIMITIVE_GRAMMAR_INVENTS_COMPOSE_EQUIVALENT : True
+plot written: True
+total time: 0.4s

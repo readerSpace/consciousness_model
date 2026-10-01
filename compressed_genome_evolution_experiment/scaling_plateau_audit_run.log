@@ -1,0 +1,35 @@
+exp605 Scaling / Plateau Audit  seeds=[1, 2, 3]
+==============================================================================
+BLOCK 1  time sweep: T={30,100,300,1000}, K=512, Amax=64
+==============================================================================
+        30: novelty=6.0 late_novel=0.0 late_birth=15.0 remaining=0.0 A_late=288.7 D/K=0.51 max_arity=64
+       100: novelty=6.0 late_novel=0.0 late_birth=50.0 remaining=0.0 A_late=289.5 D/K=0.51 max_arity=64
+       300: novelty=6.0 late_novel=0.0 late_birth=150.0 remaining=0.0 A_late=288.7 D/K=0.51 max_arity=64
+      1000: novelty=6.0 late_novel=0.0 late_birth=500.0 remaining=0.0 A_late=288.8 D/K=0.51 max_arity=64
+==============================================================================
+BLOCK 2  capacity sweep: K={64,128,256,512}, T=300, Amax=64
+==============================================================================
+        64: novelty=3.0 late_novel=0.0 late_birth=150.0 remaining=3.0 A_late=31.3 D/K=0.81 max_arity=8
+       128: novelty=4.0 late_novel=0.0 late_birth=150.0 remaining=2.0 A_late=86.0 D/K=0.70 max_arity=16
+       256: novelty=5.0 late_novel=0.0 late_birth=150.0 remaining=1.0 A_late=116.6 D/K=0.59 max_arity=32
+       512: novelty=6.0 late_novel=0.0 late_birth=150.0 remaining=0.0 A_late=288.7 D/K=0.51 max_arity=64
+==============================================================================
+BLOCK 3  catalog sweep: Amax={8,16,32,64}, T=300, K=512
+==============================================================================
+         8: novelty=3.0 late_novel=0.0 late_birth=150.0 remaining=0.0 A_late=31.3 D/K=0.10 max_arity=8
+        16: novelty=4.0 late_novel=0.0 late_birth=150.0 remaining=0.0 A_late=86.0 D/K=0.18 max_arity=16
+        32: novelty=5.0 late_novel=0.0 late_birth=150.0 remaining=0.0 A_late=116.6 D/K=0.29 max_arity=32
+        64: novelty=6.0 late_novel=0.0 late_birth=150.0 remaining=0.0 A_late=288.7 D/K=0.51 max_arity=64
+==============================================================================
+BLOCK 4  plateau / false-open-endedness verdict
+==============================================================================
+  capacity_boundary_bloat_L_to_K                                  : False
+  capacity_expansion_unlocks_reachability                         : True
+  catalog_consumed_at_widest_setting                              : True
+  late_semantic_novelty_continues                                 : False
+  reinvention_cycle_without_late_novelty                          : True
+  late_advantage_plateaus                                         : True
+  BOUNDED_CATALOG_PLATEAU                                         : True
+  OPEN_ENDEDNESS_CANDIDATE                                        : False
+plot written: True
+total time: 275.8s

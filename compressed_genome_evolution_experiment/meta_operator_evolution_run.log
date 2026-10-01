@@ -1,0 +1,14 @@
+exp609 Meta-Operator Evolution  seeds=[1, 2, 3]
+         fixed_meta_rule T= 100: op=75 late-op=25 late-meta=0 frontier=76
+         fixed_meta_rule T= 300: op=225 late-op=75 late-meta=0 frontier=226
+         fixed_meta_rule T=1000: op=750 late-op=250 late-meta=0 frontier=751
+      adaptive_meta_rule T= 100: op=100 late-op=50 late-meta=1 frontier=101
+      adaptive_meta_rule T= 300: op=300 late-op=150 late-meta=1 frontier=301
+      adaptive_meta_rule T=1000: op=1000 late-op=500 late-meta=1 frontier=1001
+  adaptive_has_late_functional_meta_rule                        : True
+  adaptive_has_more_operator_classes                            : True
+  adaptive_expands_operator_frontier                            : True
+  fixed_meta_has_no_functional_birth                            : True
+  meta_language_not_capacity_saturated                          : True
+  META_OPERATOR_EVOLUTION_CANDIDATE                             : True
+total time: 0.0s

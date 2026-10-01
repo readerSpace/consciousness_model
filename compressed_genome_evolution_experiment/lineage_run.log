@@ -1,0 +1,37 @@
+exp594 Duplication/Divergence/Specialization  seeds=[1, 2, 3, 4, 5, 6, 7, 8] lam=0.0015
+==========================================================================
+BLOCK 1+2  lineage origin of B & specialization  (B_related, DUP on)
+==========================================================================
+  runs with two specialized modules (A-mod, B-mod): 4/8
+  among them, B-module arose by DUPLICATION (has a parent): 3/4   de-novo ADD: 1/4
+     (parent is the current A-specialist in 0/4)
+  adaptation T(A->A+B) = 61.71 gens
+  specialization: S(A-mod,A)=0.62 S(A-mod,B)=0.02 | S(B-mod,A)=0.00 S(B-mod,B)=0.65
+==========================================================================
+BLOCK 3  controls: DUP-on vs DUP-off, x B_related vs B_unrelated
+==========================================================================
+    related: DUP-on T=154  DUP-off T=298  -> DUP advantage = +144 gens
+  unrelated: DUP-on T=92  DUP-off T=212  -> DUP advantage = +120 gens
+  DUP advantage(related)=+144 vs (unrelated)=+120
+==========================================================================
+BLOCK 4  latent memory: A -> A+B -> A(dormant) -> A+B  (reacquire)
+  dormancy under MDL prunes the B-trace; dormancy without MDL keeps it.
+==========================================================================
+  T_first_acquire                = 96.62 gens
+  T_reacquire (dormancy=MDL prune) = 21.75 gens  (B-trace survived 0/8)
+  T_reacquire (dormancy=no MDL keep)= 68.62 gens  (B-trace survived 8/8)
+  T_reacquire (reset, no memory)   = 137.25 gens
+==========================================================================
+PRE-REGISTERED DECISION
+==========================================================================
+  H  when B modularizes it arises predominantly by DUPLICATION: True  (parent 3/4, de-novo 1/4)
+  specialization S(A,A)>S(A,B) and S(B,B)>S(B,A):             True
+  DUP helps adaptation (T_dup_on < T_dup_off):                True
+  DUP advantage bigger for B_related than B_unrelated:        True
+  usable memory: experienced reacquire << naive reset:       True  (prune 22, keep 69 vs reset 137)
+  memory is COMPRESSED (A-module+DUP), not a stored B trace:  True  (literal trace kept 8 vs 0/8; prune reacquire <= keep)
+
+  CORE (duplication->divergence->specialization; hysteresis is a USABLE, COMPRESSED evolutionary memory): True
+figure: lineage.png
+==========================================================================
+done in 316.6s

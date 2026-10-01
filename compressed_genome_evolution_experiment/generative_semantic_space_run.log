@@ -1,0 +1,36 @@
+exp606 Generative Semantic Space  seeds=[1, 2, 3]
+==============================================================================
+BLOCK 1  time sweep: T={100,300,1000,3000}, K=64
+==============================================================================
+  adaptive_language   100: late_novel=50.0 rate=1.000 birth/retain/reuse=1/1/99 frontier=100 D/K=0.31
+  adaptive_language   300: late_novel=150.0 rate=1.000 birth/retain/reuse=1/1/299 frontier=300 D/K=0.31
+  adaptive_language  1000: late_novel=500.0 rate=1.000 birth/retain/reuse=1/1/999 frontier=1000 D/K=0.31
+  adaptive_language  3000: late_novel=1500.0 rate=1.000 birth/retain/reuse=1/1/2999 frontier=3000 D/K=0.31
+     fixed_language   100: late_novel=0.0 rate=0.000 birth/retain/reuse=0/0/0 frontier=6 D/K=0.00
+     fixed_language   300: late_novel=0.0 rate=0.000 birth/retain/reuse=0/0/0 frontier=6 D/K=0.00
+     fixed_language  1000: late_novel=0.0 rate=0.000 birth/retain/reuse=0/0/0 frontier=6 D/K=0.00
+     fixed_language  3000: late_novel=0.0 rate=0.000 birth/retain/reuse=0/0/0 frontier=6 D/K=0.00
+==============================================================================
+BLOCK 2  capacity sweep: K={16,32,64,128}, T=1000
+==============================================================================
+  adaptive_language    16: late_novel=0.0 rate=0.000 birth/retain/reuse=0/0/0 frontier=6 D/K=0.00
+  adaptive_language    32: late_novel=500.0 rate=1.000 birth/retain/reuse=1/1/999 frontier=1000 D/K=0.62
+  adaptive_language    64: late_novel=500.0 rate=1.000 birth/retain/reuse=1/1/999 frontier=1000 D/K=0.31
+  adaptive_language   128: late_novel=500.0 rate=1.000 birth/retain/reuse=1/1/999 frontier=1000 D/K=0.16
+     fixed_language    16: late_novel=0.0 rate=0.000 birth/retain/reuse=0/0/0 frontier=6 D/K=0.00
+     fixed_language    32: late_novel=0.0 rate=0.000 birth/retain/reuse=0/0/0 frontier=6 D/K=0.00
+     fixed_language    64: late_novel=0.0 rate=0.000 birth/retain/reuse=0/0/0 frontier=6 D/K=0.00
+     fixed_language   128: late_novel=0.0 rate=0.000 birth/retain/reuse=0/0/0 frontier=6 D/K=0.00
+==============================================================================
+BLOCK 3  pre-registered verdict
+==============================================================================
+  late_semantic_novelty_positive                                  : True
+  new_abstraction_retained_and_reused                             : True
+  adaptive_expands_reachable_semantic_frontier                    : True
+  fixed_language_plateaus_substantially_earlier                   : True
+  late_novelty_rate_stays_above_c                                 : True
+  capacity_above_definition_cost_preserves_mechanism              : True
+  language_not_capacity_saturated                                 : True
+  GENERATIVE_SEMANTIC_SPACE_CANDIDATE                             : True
+plot written: True
+total time: 0.8s

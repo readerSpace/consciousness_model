@@ -1,0 +1,199 @@
+{
+  "config": {
+    "seeds": 20,
+    "n_grid": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      14,
+      20,
+      30,
+      50,
+      80,
+      120
+    ]
+  },
+  "block1_discovery": [
+    {
+      "name": "Pi_reuse",
+      "change": "REUSE",
+      "N09": {
+        "reset": 14,
+        "modules": 8,
+        "operators": 5,
+        "full": 8,
+        "frozen": 8,
+        "oracle": 2
+      }
+    },
+    {
+      "name": "Pi_merge",
+      "change": "MERGE",
+      "N09": {
+        "reset": 10,
+        "modules": 3,
+        "operators": 10,
+        "full": 3,
+        "frozen": 3,
+        "oracle": 2
+      }
+    },
+    {
+      "name": "Pi_split",
+      "change": "SPLIT",
+      "N09": {
+        "reset": 10,
+        "modules": 10,
+        "operators": 10,
+        "full": 10,
+        "frozen": 10,
+        "oracle": 2
+      }
+    },
+    {
+      "name": "Pi_recomb",
+      "change": "RECOMBINE",
+      "N09": {
+        "reset": 8,
+        "modules": 8,
+        "operators": 6,
+        "full": 8,
+        "frozen": 8,
+        "oracle": 2
+      }
+    },
+    {
+      "name": "Pi_novel",
+      "change": "NOVEL",
+      "N09": {
+        "reset": 8,
+        "modules": 8,
+        "operators": 8,
+        "full": 8,
+        "frozen": 8,
+        "oracle": 2
+      }
+    }
+  ],
+  "block2_decomposition": {
+    "MERGE": {
+      "reset": 10,
+      "modules": 3,
+      "operators": 10,
+      "full": 3
+    },
+    "RECOMBINE": {
+      "reset": 8,
+      "modules": 8,
+      "operators": 6,
+      "full": 8
+    }
+  },
+  "block3_two_stage": [
+    {
+      "name": "Pi_reuse",
+      "change": "REUSE",
+      "N09_full": 8,
+      "N09_reset": 20,
+      "T095_mem": 153.0,
+      "T095_reset": 296.6666666666667
+    },
+    {
+      "name": "Pi_merge",
+      "change": "MERGE",
+      "N09_full": 2,
+      "N09_reset": 8,
+      "T095_mem": 609.6666666666666,
+      "T095_reset": 1364.8
+    },
+    {
+      "name": "Pi_split",
+      "change": "SPLIT",
+      "N09_full": 10,
+      "N09_reset": 10,
+      "T095_mem": 153.0,
+      "T095_reset": 296.6666666666667
+    },
+    {
+      "name": "Pi_recomb",
+      "change": "RECOMBINE",
+      "N09_full": 8,
+      "N09_reset": 14,
+      "T095_mem": 135.66666666666666,
+      "T095_reset": 369.5833333333333
+    },
+    {
+      "name": "Pi_novel",
+      "change": "NOVEL",
+      "N09_full": 14,
+      "N09_reset": 14,
+      "T095_mem": 123.25,
+      "T095_reset": 280.5
+    }
+  ],
+  "block4_lineage": [
+    {
+      "name": "Pi_reuse",
+      "change": "REUSE",
+      "block_ops": [
+        "REUSE",
+        "REUSE",
+        "REUSE",
+        "REUSE"
+      ]
+    },
+    {
+      "name": "Pi_merge",
+      "change": "MERGE",
+      "block_ops": [
+        "MERGE",
+        "REUSE",
+        "REUSE"
+      ]
+    },
+    {
+      "name": "Pi_split",
+      "change": "SPLIT",
+      "block_ops": [
+        "RECOMBINE/SPLIT",
+        "RECOMBINE/SPLIT",
+        "REUSE",
+        "REUSE"
+      ]
+    },
+    {
+      "name": "Pi_recomb",
+      "change": "RECOMBINE",
+      "block_ops": [
+        "RECOMBINE/SPLIT",
+        "RECOMBINE/SPLIT",
+        "REUSE",
+        "REUSE"
+      ]
+    },
+    {
+      "name": "Pi_novel",
+      "change": "NOVEL",
+      "block_ops": [
+        "RECOMBINE/SPLIT",
+        "RECOMBINE/SPLIT",
+        "RECOMBINE/SPLIT",
+        "RECOMBINE/SPLIT"
+      ]
+    }
+  ],
+  "decision": {
+    "reuse": true,
+    "merge": true,
+    "recombine": true,
+    "novel_no_transfer": true,
+    "frozen_fails_recombine": true,
+    "memory_is_operators": true,
+    "core": true
+  },
+  "runtime_seconds": 69.78068399429321
+}

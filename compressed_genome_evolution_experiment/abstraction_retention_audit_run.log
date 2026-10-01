@@ -1,0 +1,32 @@
+exp603 Abstraction Retention Audit
+==============================================================================
+BLOCK 1  dependency-aware maintenance costs
+==============================================================================
+                           O1: maintenance bits=14
+                  O2_given_O1: maintenance bits=18
+       O2_compiled_without_O1: maintenance bits=36
+==============================================================================
+BLOCK  2  single O3  retain/delete controls and MDL free choice
+==============================================================================
+                        reset: keep=[] L(D)= 0 L(tasks|D)= 80 total= 80
+                    delete_O2: keep=['O1'] L(D)=14 L(tasks|D)= 38 total= 52
+        delete_O1_compiled_O2: keep=['O2'] L(D)=36 L(tasks|D)= 36 total= 72
+                 full_history: keep=['O1', 'O2'] L(D)=32 L(tasks|D)= 30 total= 62
+  -> MDL free choice: delete_O2 keep=['O1'] total=52
+==============================================================================
+BLOCK  3  O3 family (three independent future tasks)  retain/delete controls and MDL free choice
+==============================================================================
+                        reset: keep=[] L(D)= 0 L(tasks|D)=240 total=240
+                    delete_O2: keep=['O1'] L(D)=14 L(tasks|D)=114 total=128
+        delete_O1_compiled_O2: keep=['O2'] L(D)=36 L(tasks|D)=108 total=144
+                 full_history: keep=['O1', 'O2'] L(D)=32 L(tasks|D)= 90 total=122
+  -> MDL free choice: full_history keep=['O1', 'O2'] total=122
+==============================================================================
+BLOCK 4  conservative verdict
+==============================================================================
+  MDL_PRUNES_UNAMORTIZED_HIGHER_ABSTRACTION                           : True
+  MDL_RETAINS_INTERMEDIATE_ABSTRACTIONS_WHEN_FUTURE_REUSE_PAYS        : True
+  DELETE_O1_PAYS_COMPILED_O2_COST                                     : True
+  ABSTRACTION_RETENTION_IS_SELECTED_BY_MDL                            : True
+plot written: True
+total time: 0.4s

@@ -1,0 +1,178 @@
+{
+  "config": {
+    "A": 2,
+    "C_opcode": 48,
+    "k": 3,
+    "motif_len": 4,
+    "n_comps": [
+      2,
+      4,
+      6,
+      8,
+      12,
+      16,
+      20,
+      30
+    ],
+    "seeds": [
+      1,
+      2,
+      3
+    ]
+  },
+  "block1_three_worlds": {
+    "flat_REP": {
+      "selected": "D0",
+      "expected": "D0",
+      "cost_D0": 29,
+      "cost_D1": 77,
+      "ok": true
+    },
+    "compositional": {
+      "selected": "D1",
+      "expected": "D1",
+      "cost_D0": 751,
+      "cost_D1": 677,
+      "ok": true
+    },
+    "random": {
+      "selected": "D0",
+      "expected": "D0",
+      "cost_D0": 302,
+      "cost_D1": 350,
+      "ok": true
+    },
+    "_all_match": true
+  },
+  "block2_mdl_crossover": {
+    "rows": [
+      {
+        "n_comp": 2,
+        "cost_D0": 92,
+        "cost_D1": 126,
+        "best_D0": "D0_inline",
+        "best_D1": "D1_compose_inline",
+        "selected": "D0",
+        "margin": -34
+      },
+      {
+        "n_comp": 4,
+        "cost_D0": 167,
+        "cost_D1": 189,
+        "best_D0": "D0_inline",
+        "best_D1": "D1_compose_inline",
+        "selected": "D0",
+        "margin": -22
+      },
+      {
+        "n_comp": 6,
+        "cost_D0": 223,
+        "cost_D1": 233,
+        "best_D0": "D0_inline",
+        "best_D1": "D1_compose_inline",
+        "selected": "D0",
+        "margin": -10
+      },
+      {
+        "n_comp": 8,
+        "cost_D0": 306,
+        "cost_D1": 304,
+        "best_D0": "D0_inline",
+        "best_D1": "D1_compose_inline",
+        "selected": "D1",
+        "margin": 2
+      },
+      {
+        "n_comp": 12,
+        "cost_D0": 446,
+        "cost_D1": 420,
+        "best_D0": "D0_inline",
+        "best_D1": "D1_compose_inline",
+        "selected": "D1",
+        "margin": 26
+      },
+      {
+        "n_comp": 16,
+        "cost_D0": 607,
+        "cost_D1": 557,
+        "best_D0": "D0_inline",
+        "best_D1": "D1_compose_inline",
+        "selected": "D1",
+        "margin": 50
+      },
+      {
+        "n_comp": 20,
+        "cost_D0": 751,
+        "cost_D1": 677,
+        "best_D0": "D0_inline",
+        "best_D1": "D1_compose_inline",
+        "selected": "D1",
+        "margin": 74
+      },
+      {
+        "n_comp": 30,
+        "cost_D0": 1142,
+        "cost_D1": 1008,
+        "best_D0": "D0_inline",
+        "best_D1": "D1_compose_inline",
+        "selected": "D1",
+        "margin": 134
+      }
+    ],
+    "n_comp_star_MDL": 8
+  },
+  "block3_evolution": {
+    "rows": [
+      {
+        "n_comp": 2,
+        "frac_champ_D1": 0.0
+      },
+      {
+        "n_comp": 4,
+        "frac_champ_D1": 0.0
+      },
+      {
+        "n_comp": 6,
+        "frac_champ_D1": 0.0
+      },
+      {
+        "n_comp": 8,
+        "frac_champ_D1": 0.6666666666666666
+      },
+      {
+        "n_comp": 12,
+        "frac_champ_D1": 1.0
+      },
+      {
+        "n_comp": 16,
+        "frac_champ_D1": 1.0
+      },
+      {
+        "n_comp": 20,
+        "frac_champ_D1": 1.0
+      },
+      {
+        "n_comp": 30,
+        "frac_champ_D1": 1.0
+      }
+    ],
+    "n_comp_evo": 8
+  },
+  "block4_opcode_price": {
+    "24": 4,
+    "48": 8,
+    "72": 12,
+    "96": 16,
+    "_monotone": true
+  },
+  "verdict": {
+    "world_selection_matches_table": true,
+    "mdl_crossover_exists": true,
+    "evolution_adopts_D1": true,
+    "n_comp_star_MDL": 8,
+    "n_comp_evo": 8,
+    "evo_tracks_MDL": true,
+    "opcode_price_monotone": true,
+    "REPRESENTATION_LANGUAGE_IS_SELECTED": true
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "regime_k": 2,
+    "gens": 1000
+  },
+  "block1_dl_grid": {
+    "ks": [
+      2,
+      3,
+      4,
+      6,
+      10,
+      14,
+      18,
+      20,
+      24,
+      30
+    ],
+    "mls": [
+      2,
+      3,
+      5,
+      8
+    ],
+    "grid": {
+      "2": [
+        -9,
+        -9,
+        -9,
+        -9
+      ],
+      "3": [
+        -6,
+        -6,
+        -6,
+        -6
+      ],
+      "4": [
+        -7,
+        -7,
+        -7,
+        -7
+      ],
+      "6": [
+        -3,
+        -3,
+        -3,
+        -3
+      ],
+      "10": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "14": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "18": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "20": [
+        9,
+        9,
+        9,
+        9
+      ],
+      "24": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "30": [
+        21,
+        21,
+        21,
+        21
+      ]
+    },
+    "break_even": 14
+  },
+  "block2_conditions": {
+    "dL_compose": {
+      "mean": -23.0,
+      "std": 0.0,
+      "vals": [
+        -23.0,
+        -23.0,
+        -23.0
+      ]
+    },
+    "evolved_imperfect_recomb": {
+      "mean": 0.0,
+      "std": 0.0,
+      "vals": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "evolved_F": {
+      "mean": 0.8703703703703703,
+      "std": 0.057077907434897907,
+      "vals": [
+        0.9444444444444444,
+        0.8055555555555556,
+        0.8611111111111112
+      ]
+    },
+    "oracle_phenotype_recomb": {
+      "mean": 0.6666666666666666,
+      "std": 0.4714045207910317,
+      "vals": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    "oracle_factorization_recomb": {
+      "mean": 0.0,
+      "std": 0.0,
+      "vals": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "oracle_both_recomb": {
+      "mean": 0.0,
+      "std": 0.0,
+      "vals": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "block3_propose_survive_fix": {
+    "2": {
+      "proposed": {
+        "mean": 9.333333333333334,
+        "std": 8.219218670625303,
+        "vals": [
+          20.0,
+          0.0,
+          8.0
+        ]
+      },
+      "survived": {
+        "mean": 4.666666666666667,
+        "std": 5.90668171555645,
+        "vals": [
+          13.0,
+          0.0,
+          1.0
+        ]
+      },
+      "fixed": {
+        "mean": 0.3333333333333333,
+        "std": 0.4714045207910317,
+        "vals": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "20": {
+      "proposed": {
+        "mean": 17.333333333333332,
+        "std": 6.944222218666553,
+        "vals": [
+          9.0,
+          26.0,
+          17.0
+        ]
+      },
+      "survived": {
+        "mean": 6.0,
+        "std": 2.943920288775949,
+        "vals": [
+          2.0,
+          9.0,
+          7.0
+        ]
+      },
+      "fixed": {
+        "mean": 0.0,
+        "std": 0.0,
+        "vals": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "block4_global_optimum": {
+    "periodic_k2": {
+      "L_opt": 94,
+      "recomb_in_opt": 0
+    },
+    "periodic_k10": {
+      "L_opt": 219,
+      "recomb_in_opt": 0
+    },
+    "aperiodic_shared": {
+      "L_opt": 172,
+      "recomb_in_opt": 0
+    }
+  },
+  "block5_micro_demo": {
+    "10": {
+      "dL": -1,
+      "favoured": false,
+      "kept_by_mdl": false
+    },
+    "14": {
+      "dL": 5,
+      "favoured": true,
+      "kept_by_mdl": true
+    },
+    "20": {
+      "dL": 9,
+      "favoured": true,
+      "kept_by_mdl": true
+    },
+    "30": {
+      "dL": 21,
+      "favoured": true,
+      "kept_by_mdl": true
+    }
+  },
+  "verdict": {
+    "dL_compose_nonpositive": true,
+    "break_even_reuse_k": 14,
+    "oracle_both_recomb_zero": true,
+    "oracle_phenotype_recomb_zero": true,
+    "evolved_recomb_zero": true,
+    "recomb_proposed_by_mutation": true,
+    "recomb_survives_mdl": true,
+    "REP_subsumes_recombination": true,
+    "bottleneck": "CODEC/MDL: recombination is not rewarded (dL_compose <= 0)"
+  }
+}

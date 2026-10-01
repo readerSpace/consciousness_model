@@ -1,0 +1,26 @@
+exp602 Cumulative Instruction Bootstrapping
+==============================================================================
+BLOCK 1  E1 discovers O1 in the exp601 distant primitive basis
+==============================================================================
+  O1 definition=['REF0', 'BOX', 'REF1', 'PAIR', 'FLATTEN']  K_P0(O1)=14  retained decoder bits=14
+==============================================================================
+BLOCK 2  E2 four-way abstraction: base / useful history / irrelevant history
+==============================================================================
+                         base: K_O2=36 n*_birth=3 history_bits(sunk)= 0 expr=RAW_JOIN(r0,RAW_JOIN(r1,RAW_JOIN(r2,r3)))
+            history_useful_O1: K_O2=18 n*_birth=2 history_bits(sunk)=14 expr=O1(r0,O1(r1,O1(r2,r3)))
+           history_irrelevant: K_O2=36 n*_birth=3 history_bits(sunk)=14 expr=RAW_JOIN(r0,RAW_JOIN(r1,RAW_JOIN(r2,r3)))
+==============================================================================
+BLOCK 3  cumulative abstraction trace O1 -> O2 -> O3
+==============================================================================
+  stage=1 arity=2: K_P0=14 K_history=14 ratio=1.000 n*_P0=3 n*_history=3
+  stage=2 arity=4: K_P0=36 K_history=18 ratio=0.500 n*_P0=3 n*_history=2
+  stage=3 arity=8: K_P0=80 K_history=30 ratio=0.375 n*_P0=6 n*_history=2
+==============================================================================
+BLOCK 4  conservative verdict
+==============================================================================
+  USEFUL_HISTORY_NOT_LANGUAGE_SIZE_CAUSES_O2_ADVANTAGE            : True
+  CUMULATIVE_HISTORY_LOWERED_LATER_SEMANTIC_COMPLEXITY            : True
+  CUMULATIVE_HISTORY_ACCELERATED_BIRTH_THRESHOLDS                 : True
+  CUMULATIVE_REPRESENTATIONAL_EVOLUTION                           : True
+plot written: True
+total time: 0.4s

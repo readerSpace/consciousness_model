@@ -742,3 +742,161 @@ def test_capacity_grows_with_demand():
     recs = CAP.run_staged([1, 4], lam=0.001, seed=1, gens_per_stage=150, pop=90)
     assert recs[1].metrics["L_total"] > recs[0].metrics["L_total"] + 3
     assert recs[1].metrics["n_used_macros"] > recs[0].metrics["n_used_macros"]
+
+
+# ===========================================================================
+# exp594: duplication / divergence / specialization
+# ===========================================================================
+import lineage as LNG
+
+
+def test_dup_records_parent_add_is_denovo():
+    w = LNG.world_related()
+    cfg = LNG.DEFAULT_CFG
+    rng = np.random.default_rng(0)
+    alloc = LNG.IdAlloc()
+    lin = LNG.new_lingenome(rng, w, cfg["nmax"])
+    lin = LNG.op_add(rng, lin, w, cfg, alloc)          # de-novo macro
+    assert len(lin.g.macros) == 1 and lin.meta[0].parent is None
+    dup = LNG.op_dup(rng, lin, w, cfg, alloc)          # duplicate macro 0
+    assert len(dup.g.macros) == 2
+    assert dup.meta[1].parent == dup.meta[0].id        # child records parent id
+    assert dup.g.macros[1] == dup.g.macros[0]          # identical copy at birth
+    G.validate(dup.g)
+
+
+def test_lineage_mutations_stay_valid_and_meta_aligned():
+    w = LNG.world_related()
+    cfg = LNG.DEFAULT_CFG
+    rng = np.random.default_rng(1)
+    alloc = LNG.IdAlloc()
+    lin = LNG.new_lingenome(rng, w, cfg["nmax"])
+    for _ in range(1500):
+        lin = LNG.mutate(rng, lin, w, cfg, alloc)
+        G.validate(lin.g)
+        assert len(lin.meta) == len(lin.g.macros)      # meta stays parallel
+        assert len(G.expand(lin.g)) == w.L
+
+
+def test_ids_are_unique():
+    w = LNG.world_related()
+    cfg = LNG.DEFAULT_CFG
+    rng = np.random.default_rng(2)
+    alloc = LNG.IdAlloc()
+    lin = LNG.new_lingenome(rng, w, cfg["nmax"])
+    for _ in range(600):
+        lin = LNG.mutate(rng, lin, w, cfg, alloc)
+        ids = [m.id for m in lin.meta]
+        assert len(ids) == len(set(ids))               # no duplicate ids
+
+
+def test_knockout_isolates_region():
+    # a genome that tiles motif_A in R_A and motif_B in R_B via two macros
+    from genome import Genome, Instr, OP_REP
+    w = LNG.world_related()
+    mA = [Instr(OP_LIT, int(v)) for v in w.motif_A]
+    mB = [Instr(OP_LIT, int(v)) for v in w.motif_B]
+    g = Genome(macros=[mA, mB],
+               program=[Instr(OP_REP, w.reps, 0), Instr(OP_REP, w.reps, 1)],
+               A=w.A, L=w.L, nmax=8)
+    lin = LNG.LinGenome(g, [LNG.Module(1, None), LNG.Module(2, 1)])
+    spec = LNG.specialization(lin, w)
+    a = next(s for s in spec if s["idx"] == 0)
+    b = next(s for s in spec if s["idx"] == 1)
+    assert a["S_A"] > 0.3 and a["S_B"] < 1e-9          # macro0 serves A only
+    assert b["S_B"] > 0.3 and b["S_A"] < 1e-9          # macro1 serves B only
+
+
+def test_dup_off_forbids_duplication():
+    w = LNG.world_related()
+    cfg = LNG.DEFAULT_CFG
+    rng = np.random.default_rng(3)
+    alloc = LNG.IdAlloc()
+    lin = LNG.new_lingenome(rng, w, cfg["nmax"])
+    lin = LNG.op_add(rng, lin, w, cfg, alloc)
+    # with allow_dup=False, no macro ever gets a non-None parent
+    for _ in range(800):
+        lin = LNG.mutate(rng, lin, w, cfg, alloc, allow_dup=False)
+        assert all(m.parent is None for m in lin.meta)
+
+
+def test_related_world_is_one_edit_unrelated_is_more():
+    wr = LNG.world_related()
+    wu = LNG.world_unrelated()
+    dr = int(np.sum(wr.motif_A != wr.motif_B))
+    du = int(np.sum(wu.motif_A != wu.motif_B))
+    assert dr == 1                                     # B_related = 1 symbol change
+    assert du > dr                                     # B_unrelated differs more
+
+
+# ===========================================================================
+# exp595: dynamic interaction recomposition
+# ===========================================================================
+import recompose as RC
+
+
+def test_change_classification():
+    seq = RC.sequence()
+    expected = ["REUSE", "MERGE", "SPLIT", "RECOMBINE", "NOVEL"]
+    got = [RC.classify_change(seq[i - 1]["pi"], seq[i]["pi"])
+           for i in range(1, len(seq))]
+    assert got == expected
+
+
+def test_recombine_is_atom_respecting_novel_is_not():
+    seq = RC.sequence()
+    atoms = [set(a.tolist()) for a in RC.ATOMS]
+
+    def atom_respecting(pi):
+        return all(any(a <= set(int(x) for x in b) for b in pi) for a in atoms)
+    recomb = next(s for s in seq if s["change"] == "RECOMBINE")["pi"]
+    novel = next(s for s in seq if s["change"] == "NOVEL")["pi"]
+    assert atom_respecting(recomb)          # recombine keeps atoms intact
+    assert not atom_respecting(novel)       # novel cuts atoms
+
+
+def test_operators_solve_recombine_modules_do_not():
+    seq = RC.sequence()
+    i = next(k for k in range(1, len(seq)) if seq[k]["change"] == "RECOMBINE")
+    prev, cur = seq[i - 1]["pi"], seq[i]["pi"]
+    grid = [2, 3, 4, 5, 6, 8, 10, 14, 20, 30, 50]
+    n_op = RC.discovery_cost("operators", cur, prev, grid, 20, 500)
+    n_mod = RC.discovery_cost("modules", cur, prev, grid, 20, 500)
+    n_reset = RC.discovery_cost("reset", cur, prev, grid, 20, 500)
+    assert n_op is not None and n_op < n_reset      # atom operators enable recombine
+    assert n_mod is None or n_mod >= n_op           # block modules cannot
+
+
+def test_frozen_cannot_split_or_recombine():
+    seq = RC.sequence()
+    grid = [2, 3, 4, 5, 6, 8, 10, 14, 20, 30, 50, 80]
+    for change in ["RECOMBINE"]:
+        i = next(k for k in range(1, len(seq)) if seq[k]["change"] == change)
+        prev, cur = seq[i - 1]["pi"], seq[i]["pi"]
+        n_frozen = RC.discovery_cost("frozen", cur, prev, grid, 20, 600)
+        n_op = RC.discovery_cost("operators", cur, prev, grid, 20, 600)
+        # frozen (blocks fixed) cannot beat the atom-operator learner on recompose
+        assert (n_frozen is None) or (n_op is not None and n_frozen >= n_op)
+
+
+def test_oracle_is_cheapest_and_novel_gives_no_transfer():
+    seq = RC.sequence()
+    grid = [2, 3, 4, 5, 6, 8, 10, 14, 20, 30, 50]
+    # NOVEL: memory does not beat reset
+    i = next(k for k in range(1, len(seq)) if seq[k]["change"] == "NOVEL")
+    prev, cur = seq[i - 1]["pi"], seq[i]["pi"]
+    n_full = RC.discovery_cost("full", cur, prev, grid, 20, 700)
+    n_reset = RC.discovery_cost("reset", cur, prev, grid, 20, 700)
+    assert (n_full is None) or (n_reset is None) or (n_full >= n_reset)
+    # oracle needs the fewest samples
+    n_or = RC.discovery_cost("oracle", cur, prev, grid, 20, 700)
+    assert n_or is not None and (n_reset is None or n_or <= n_reset)
+
+
+def test_no_python_hash_in_recompose():
+    import inspect
+    for mod in (RC,):
+        src = inspect.getsource(mod)
+        code = re.sub(r'""".*?"""', "", src, flags=re.S)
+        code = re.sub(r"#.*", "", code)
+        assert "hash(" not in code

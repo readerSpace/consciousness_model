@@ -1,0 +1,468 @@
+{
+  "config": {
+    "steps": 30,
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "capacity": 64
+  },
+  "conditions": {
+    "adaptive_language": {
+      "late_births": {
+        "mean": 15.0,
+        "std": 0.0,
+        "values": [
+          15,
+          15,
+          15
+        ]
+      },
+      "late_reuse": {
+        "mean": 25.0,
+        "std": 0.0,
+        "values": [
+          25,
+          25,
+          25
+        ]
+      },
+      "n_birth": {
+        "mean": 30.0,
+        "std": 0.0,
+        "values": [
+          30,
+          30,
+          30
+        ]
+      },
+      "n_pruned": {
+        "mean": 19.0,
+        "std": 0.0,
+        "values": [
+          19,
+          19,
+          19
+        ]
+      },
+      "n_retained_final": {
+        "mean": 2.0,
+        "std": 0.0,
+        "values": [
+          2,
+          2,
+          2
+        ]
+      },
+      "mean_A_late": {
+        "mean": 31.333333333333332,
+        "std": 0.0,
+        "values": [
+          31.333333333333332,
+          31.333333333333332,
+          31.333333333333332
+        ]
+      },
+      "mean_description": {
+        "mean": 142.33333333333334,
+        "std": 0.0,
+        "values": [
+          142.33333333333334,
+          142.33333333333334,
+          142.33333333333334
+        ]
+      },
+      "max_D_language": {
+        "mean": 52.0,
+        "std": 0.0,
+        "values": [
+          52,
+          52,
+          52
+        ]
+      },
+      "final_D_language": {
+        "mean": 52.0,
+        "std": 0.0,
+        "values": [
+          52,
+          52,
+          52
+        ]
+      },
+      "max_arity": {
+        "mean": 8.0,
+        "std": 0.0,
+        "values": [
+          8,
+          8,
+          8
+        ]
+      }
+    },
+    "fixed_language": {
+      "late_births": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "late_reuse": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "n_birth": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "n_pruned": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "n_retained_final": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mean_A_late": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "mean_description": {
+        "mean": 57.71111111111111,
+        "std": 6.66896256762587,
+        "values": [
+          65.8,
+          57.86666666666667,
+          49.46666666666667
+        ]
+      },
+      "max_D_language": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "final_D_language": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "max_arity": {
+        "mean": 2.0,
+        "std": 0.0,
+        "values": [
+          2,
+          2,
+          2
+        ]
+      }
+    },
+    "no_retention": {
+      "late_births": {
+        "mean": 15.0,
+        "std": 0.0,
+        "values": [
+          15,
+          15,
+          15
+        ]
+      },
+      "late_reuse": {
+        "mean": 15.0,
+        "std": 0.0,
+        "values": [
+          15,
+          15,
+          15
+        ]
+      },
+      "n_birth": {
+        "mean": 30.0,
+        "std": 0.0,
+        "values": [
+          30,
+          30,
+          30
+        ]
+      },
+      "n_pruned": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "n_retained_final": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mean_A_late": {
+        "mean": 6.0,
+        "std": 0.0,
+        "values": [
+          6.0,
+          6.0,
+          6.0
+        ]
+      },
+      "mean_description": {
+        "mean": 24.0,
+        "std": 0.0,
+        "values": [
+          24.0,
+          24.0,
+          24.0
+        ]
+      },
+      "max_D_language": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "final_D_language": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "max_arity": {
+        "mean": 2.0,
+        "std": 0.0,
+        "values": [
+          2,
+          2,
+          2
+        ]
+      }
+    },
+    "keep_all": {
+      "late_births": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "late_reuse": {
+        "mean": 45.0,
+        "std": 0.0,
+        "values": [
+          45,
+          45,
+          45
+        ]
+      },
+      "n_birth": {
+        "mean": 3.0,
+        "std": 0.0,
+        "values": [
+          3,
+          3,
+          3
+        ]
+      },
+      "n_pruned": {
+        "mean": 0.0,
+        "std": 0.0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "n_retained_final": {
+        "mean": 3.0,
+        "std": 0.0,
+        "values": [
+          3,
+          3,
+          3
+        ]
+      },
+      "mean_A_late": {
+        "mean": 54.0,
+        "std": 0.0,
+        "values": [
+          54.0,
+          54.0,
+          54.0
+        ]
+      },
+      "mean_description": {
+        "mean": 176.06666666666666,
+        "std": 5.102795167211641,
+        "values": [
+          183.0,
+          174.33333333333334,
+          170.86666666666667
+        ]
+      },
+      "max_D_language": {
+        "mean": 62.0,
+        "std": 0.0,
+        "values": [
+          62,
+          62,
+          62
+        ]
+      },
+      "final_D_language": {
+        "mean": 62.0,
+        "std": 0.0,
+        "values": [
+          62,
+          62,
+          62
+        ]
+      },
+      "max_arity": {
+        "mean": 8.0,
+        "std": 0.0,
+        "values": [
+          8,
+          8,
+          8
+        ]
+      }
+    }
+  },
+  "adaptive_life_history_seed1": {
+    "O1": {
+      "birth": [
+        0
+      ],
+      "prune": [],
+      "use": 30,
+      "reuse": 29,
+      "retained_steps": 30
+    },
+    "O2": {
+      "birth": [
+        1,
+        3,
+        4,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13,
+        15,
+        16,
+        18,
+        19,
+        21,
+        22,
+        24,
+        25,
+        27,
+        28
+      ],
+      "prune": [
+        2,
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29
+      ],
+      "use": 10,
+      "reuse": 9,
+      "retained_steps": 10
+    },
+    "O3": {
+      "birth": [
+        2,
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29
+      ],
+      "prune": [
+        3,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27
+      ],
+      "use": 10,
+      "reuse": 9,
+      "retained_steps": 10
+    }
+  },
+  "verdict": {
+    "late_instruction_birth": true,
+    "late_reuse_of_old_instructions": true,
+    "retention_and_pruning_both_occur": true,
+    "accumulated_advantage_persists_late": true,
+    "adaptive_beats_fixed_and_no_retention": true,
+    "adaptive_forgetting_beats_keep_all_bloat": true,
+    "language_not_saturated_at_capacity": true,
+    "SELF_SUSTAINING_CUMULATIVE_ABSTRACTION": true
+  }
+}

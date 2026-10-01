@@ -1,0 +1,178 @@
+{
+  "config": {
+    "n_comps": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      12
+    ]
+  },
+  "bases": {
+    "full": {
+      "fixed": 306,
+      "total": 264,
+      "born": true,
+      "expressible": true,
+      "K_concat": 8,
+      "reusable": true,
+      "L_D": 8,
+      "L_G_given_D": 256,
+      "witness": [
+        "REF0",
+        "REF1",
+        "MERGE"
+      ],
+      "n_birth_MDL": 2
+    },
+    "minus_ref": {
+      "fixed": 306,
+      "total": 306,
+      "born": false,
+      "expressible": false,
+      "K_concat": null,
+      "reusable": true,
+      "L_D": 0,
+      "L_G_given_D": 306,
+      "witness": [],
+      "n_birth_MDL": null
+    },
+    "minus_order": {
+      "fixed": 306,
+      "total": 306,
+      "born": false,
+      "expressible": false,
+      "K_concat": null,
+      "reusable": true,
+      "L_D": 0,
+      "L_G_given_D": 306,
+      "witness": [],
+      "n_birth_MDL": null
+    },
+    "minus_merge": {
+      "fixed": 306,
+      "total": 306,
+      "born": false,
+      "expressible": false,
+      "K_concat": null,
+      "reusable": true,
+      "L_D": 0,
+      "L_G_given_D": 306,
+      "witness": [],
+      "n_birth_MDL": null
+    },
+    "minus_reuse": {
+      "fixed": 306,
+      "total": 306,
+      "born": false,
+      "expressible": true,
+      "K_concat": 8,
+      "reusable": false,
+      "L_D": 0,
+      "L_G_given_D": 306,
+      "witness": [
+        "REF0",
+        "REF1",
+        "MERGE"
+      ],
+      "n_birth_MDL": null
+    },
+    "distant_box_pair_flatten": {
+      "fixed": 306,
+      "total": 270,
+      "born": true,
+      "expressible": true,
+      "K_concat": 14,
+      "reusable": true,
+      "L_D": 14,
+      "L_G_given_D": 256,
+      "witness": [
+        "REF0",
+        "BOX",
+        "REF1",
+        "PAIR",
+        "FLATTEN"
+      ],
+      "n_birth_MDL": 3
+    }
+  },
+  "controls": {
+    "flat_REP": {
+      "full": {
+        "fixed": 29,
+        "total": 29,
+        "born": false,
+        "expressible": true,
+        "K_concat": 8,
+        "reusable": true,
+        "L_D": 0,
+        "L_G_given_D": 29,
+        "witness": [
+          "REF0",
+          "REF1",
+          "MERGE"
+        ]
+      },
+      "distant_box_pair_flatten": {
+        "fixed": 29,
+        "total": 29,
+        "born": false,
+        "expressible": true,
+        "K_concat": 14,
+        "reusable": true,
+        "L_D": 0,
+        "L_G_given_D": 29,
+        "witness": [
+          "REF0",
+          "BOX",
+          "REF1",
+          "PAIR",
+          "FLATTEN"
+        ]
+      }
+    },
+    "random": {
+      "full": {
+        "fixed": 302,
+        "total": 302,
+        "born": false,
+        "expressible": true,
+        "K_concat": 8,
+        "reusable": true,
+        "L_D": 0,
+        "L_G_given_D": 302,
+        "witness": [
+          "REF0",
+          "REF1",
+          "MERGE"
+        ]
+      },
+      "distant_box_pair_flatten": {
+        "fixed": 302,
+        "total": 302,
+        "born": false,
+        "expressible": true,
+        "K_concat": 14,
+        "reusable": true,
+        "L_D": 0,
+        "L_G_given_D": 302,
+        "witness": [
+          "REF0",
+          "BOX",
+          "REF1",
+          "PAIR",
+          "FLATTEN"
+        ]
+      }
+    }
+  },
+  "verdict": {
+    "REF_ORDER_MERGE_ARE_COMPUTATIONALLY_NECESSARY": true,
+    "REUSE_IS_SELECTIVELY_NECESSARY": true,
+    "K_P_PREDICTS_LATER_BIRTH_FOR_DISTANT_BASIS": true,
+    "NO_BIRTH_IN_NONCOMPOSITIONAL_WORLDS": true,
+    "BASIS_DISTANCE_GOVERNS_INSTRUCTION_BIRTH_WITHIN_AUDITED_BASES": true
+  }
+}

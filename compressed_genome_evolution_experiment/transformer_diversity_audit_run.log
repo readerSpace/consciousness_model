@@ -1,0 +1,23 @@
+exp611 Transformer Diversity Audit  seeds=[1, 2, 3]
+             unified_adaptive T= 100: transformers=33 late=16 raw=100 depth=100
+             unified_adaptive T= 300: transformers=100 late=50 raw=300 depth=300
+             unified_adaptive T=1000: transformers=333 late=166 raw=1000 depth=1000
+         self_application_off T= 100: transformers=0 late=0 raw=0 depth=0
+         self_application_off T= 300: transformers=0 late=0 raw=0 depth=0
+         self_application_off T=1000: transformers=0 late=0 raw=0 depth=0
+    transformer_retention_off T= 100: transformers=0 late=0 raw=100 depth=100
+    transformer_retention_off T= 300: transformers=0 late=0 raw=300 depth=300
+    transformer_retention_off T=1000: transformers=0 late=0 raw=1000 depth=1000
+            fixed_transformer T= 100: transformers=0 late=0 raw=3 depth=3
+            fixed_transformer T= 300: transformers=0 late=0 raw=3 depth=3
+            fixed_transformer T=1000: transformers=0 late=0 raw=3 depth=3
+       random_program_rewrite T= 100: transformers=0 late=0 raw=100 depth=0
+       random_program_rewrite T= 300: transformers=0 late=0 raw=300 depth=0
+       random_program_rewrite T=1000: transformers=0 late=0 raw=1000 depth=0
+  functional_transformer_classes_increase                                 : True
+  adaptive_has_late_functional_transformers                               : True
+  all_mechanism_controls_have_zero_functional_transformers                : True
+  random_rewrite_has_raw_programs_but_no_functional_transformer           : True
+  adaptive_language_not_capacity_saturated                                : True
+  TRANSFORMER_DIVERSITY_CANDIDATE                                         : True
+total time: 69.8s

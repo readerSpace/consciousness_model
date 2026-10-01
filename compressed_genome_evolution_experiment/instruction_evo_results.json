@@ -1,0 +1,185 @@
+{
+  "config": {
+    "n_comps": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "max_tokens": 3
+  },
+  "controls": {
+    "flat_REP": {
+      "fixed": 29,
+      "birth_on": 29,
+      "oracle": 29,
+      "born": false,
+      "n_candidates": 28,
+      "n_opcodes": 0,
+      "D_language": 0,
+      "R_opcode_use": 0,
+      "L_D": 0,
+      "L_G_given_D": 29,
+      "compose_equivalent": false
+    },
+    "compositional": {
+      "fixed": 306,
+      "birth_on": 264,
+      "oracle": 264,
+      "born": true,
+      "n_candidates": 28,
+      "n_opcodes": 1,
+      "D_language": 2,
+      "R_opcode_use": 24,
+      "L_D": 8,
+      "L_G_given_D": 256,
+      "compose_equivalent": true
+    },
+    "random": {
+      "fixed": 302,
+      "birth_on": 302,
+      "oracle": 302,
+      "born": false,
+      "n_candidates": 28,
+      "n_opcodes": 0,
+      "D_language": 0,
+      "R_opcode_use": 0,
+      "L_D": 0,
+      "L_G_given_D": 302,
+      "compose_equivalent": false
+    }
+  },
+  "threshold": {
+    "rows": [
+      {
+        "n_comp": 1,
+        "fixed": 48,
+        "birth_on": 48,
+        "oracle": 48,
+        "born": false,
+        "n_candidates": 28,
+        "n_opcodes": 0,
+        "D_language": 0,
+        "R_opcode_use": 0,
+        "L_D": 0,
+        "L_G_given_D": 48,
+        "compose_equivalent": false
+      },
+      {
+        "n_comp": 2,
+        "fixed": 92,
+        "birth_on": 86,
+        "oracle": 86,
+        "born": true,
+        "n_candidates": 28,
+        "n_opcodes": 1,
+        "D_language": 2,
+        "R_opcode_use": 6,
+        "L_D": 8,
+        "L_G_given_D": 78,
+        "compose_equivalent": true
+      },
+      {
+        "n_comp": 4,
+        "fixed": 167,
+        "birth_on": 149,
+        "oracle": 149,
+        "born": true,
+        "n_candidates": 28,
+        "n_opcodes": 1,
+        "D_language": 2,
+        "R_opcode_use": 12,
+        "L_D": 8,
+        "L_G_given_D": 141,
+        "compose_equivalent": true
+      },
+      {
+        "n_comp": 6,
+        "fixed": 223,
+        "birth_on": 193,
+        "oracle": 193,
+        "born": true,
+        "n_candidates": 28,
+        "n_opcodes": 1,
+        "D_language": 2,
+        "R_opcode_use": 18,
+        "L_D": 8,
+        "L_G_given_D": 185,
+        "compose_equivalent": true
+      },
+      {
+        "n_comp": 8,
+        "fixed": 306,
+        "birth_on": 264,
+        "oracle": 264,
+        "born": true,
+        "n_candidates": 28,
+        "n_opcodes": 1,
+        "D_language": 2,
+        "R_opcode_use": 24,
+        "L_D": 8,
+        "L_G_given_D": 256,
+        "compose_equivalent": true
+      },
+      {
+        "n_comp": 12,
+        "fixed": 446,
+        "birth_on": 380,
+        "oracle": 380,
+        "born": true,
+        "n_candidates": 28,
+        "n_opcodes": 1,
+        "D_language": 2,
+        "R_opcode_use": 36,
+        "L_D": 8,
+        "L_G_given_D": 372,
+        "compose_equivalent": true
+      }
+    ],
+    "n_opcode_birth_MDL": 2
+  },
+  "birth_evolution": {
+    "rows": [
+      {
+        "n_comp": 1,
+        "frac_born": 0.0
+      },
+      {
+        "n_comp": 2,
+        "frac_born": 1.0
+      },
+      {
+        "n_comp": 4,
+        "frac_born": 1.0
+      },
+      {
+        "n_comp": 6,
+        "frac_born": 1.0
+      },
+      {
+        "n_comp": 8,
+        "frac_born": 1.0
+      },
+      {
+        "n_comp": 12,
+        "frac_born": 1.0
+      }
+    ],
+    "n_opcode_birth_evo": 2
+  },
+  "verdict": {
+    "controls_match_prediction": true,
+    "invented_opcode_is_compose_equivalent": true,
+    "n_opcode_birth_MDL": 2,
+    "n_opcode_birth_evo": 2,
+    "evo_tracks_MDL": true,
+    "PRIMITIVE_GRAMMAR_INVENTS_COMPOSE_EQUIVALENT": true
+  }
+}

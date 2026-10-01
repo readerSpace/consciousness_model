@@ -1,0 +1,102 @@
+{
+  "accounting": {
+    "O1": 14,
+    "O2_given_O1": 18,
+    "O2_compiled_without_O1": 36
+  },
+  "single_O3": {
+    "arities": [
+      8
+    ],
+    "conditions": {
+      "reset": {
+        "retains": [],
+        "L_language": 0,
+        "L_tasks_given_D": 80,
+        "L_total": 80
+      },
+      "delete_O2": {
+        "retains": [
+          "O1"
+        ],
+        "L_language": 14,
+        "L_tasks_given_D": 38,
+        "L_total": 52
+      },
+      "delete_O1_compiled_O2": {
+        "retains": [
+          "O2"
+        ],
+        "L_language": 36,
+        "L_tasks_given_D": 36,
+        "L_total": 72
+      },
+      "full_history": {
+        "retains": [
+          "O1",
+          "O2"
+        ],
+        "L_language": 32,
+        "L_tasks_given_D": 30,
+        "L_total": 62
+      }
+    },
+    "free_choice": "delete_O2",
+    "free_choice_retains": [
+      "O1"
+    ],
+    "free_choice_total": 52
+  },
+  "O3_family_three": {
+    "arities": [
+      8,
+      8,
+      8
+    ],
+    "conditions": {
+      "reset": {
+        "retains": [],
+        "L_language": 0,
+        "L_tasks_given_D": 240,
+        "L_total": 240
+      },
+      "delete_O2": {
+        "retains": [
+          "O1"
+        ],
+        "L_language": 14,
+        "L_tasks_given_D": 114,
+        "L_total": 128
+      },
+      "delete_O1_compiled_O2": {
+        "retains": [
+          "O2"
+        ],
+        "L_language": 36,
+        "L_tasks_given_D": 108,
+        "L_total": 144
+      },
+      "full_history": {
+        "retains": [
+          "O1",
+          "O2"
+        ],
+        "L_language": 32,
+        "L_tasks_given_D": 90,
+        "L_total": 122
+      }
+    },
+    "free_choice": "full_history",
+    "free_choice_retains": [
+      "O1",
+      "O2"
+    ],
+    "free_choice_total": 122
+  },
+  "verdict": {
+    "MDL_PRUNES_UNAMORTIZED_HIGHER_ABSTRACTION": true,
+    "MDL_RETAINS_INTERMEDIATE_ABSTRACTIONS_WHEN_FUTURE_REUSE_PAYS": true,
+    "DELETE_O1_PAYS_COMPILED_O2_COST": true,
+    "ABSTRACTION_RETENTION_IS_SELECTED_BY_MDL": true
+  }
+}

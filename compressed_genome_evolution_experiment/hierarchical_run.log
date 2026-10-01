@@ -1,0 +1,49 @@
+exp597 Hierarchical Compositional Escalation  A=2 L=48 seeds=[1, 2, 3] env_changes=6 taus=[10, 30, 100, 300]
+==============================================================================
+BLOCK 1  tau_module calibration (generations to first reused module)
+==============================================================================
+  tau_module (median gens to first reuse, fixed target) = 0.0
+==============================================================================
+BLOCK 2  tau_E sweep {10,30,100,300}  (phase transition) + controls
+==============================================================================
+  tau_E= 10: depth=1.3 reuse_late=0.50 novel(cum/2nd)=3.3/2.0 recomb=0.0 U 51->66 F=0.74
+  tau_E= 30: depth=1.3 reuse_late=0.51 novel(cum/2nd)=2.7/1.0 recomb=0.0 U 59->52 F=0.72
+  tau_E=100: depth=1.3 reuse_late=0.53 novel(cum/2nd)=1.7/0.0 recomb=0.0 U 54->54 F=0.77
+  tau_E=300: depth=1.3 reuse_late=0.61 novel(cum/2nd)=3.0/0.7 recomb=0.0 U 51->54 F=0.80
+  -> peak compositional activity at tau_E = 10 (tau_module ~ 0.0)
+  control no-factorize : reuse_any=0.67 depth=1.3 cum_novel=1.7  (factorisation is the mechanism)
+  control frozen-env   : novel(1st/2nd)=1.3/0.0  (no new structure demanded)
+==============================================================================
+BLOCK 3  capacity scaling (does the phenomenon persist at larger K_max?)
+==============================================================================
+  K_max=120: depth=1.3 reuse_late=0.46 cum_novel=2.0 novel_2nd=0.3
+  K_max=200: depth=1.3 reuse_late=0.48 cum_novel=2.7 novel_2nd=1.3
+  -> compositional activity persists at higher capacity? True
+==============================================================================
+BLOCK 4  exact-L* audit (small L): does bounded-MDL U_t track L*?
+==============================================================================
+  seed 1: exact L*= 39  bounded U= 51  solved_frac=1.00  (U >= L*: True)
+  seed 2: exact L*= 21  bounded U= 29  solved_frac=1.00  (U >= L*: True)
+  seed 3: exact L*= 21  bounded U= 21  solved_frac=1.00  (U >= L*: True)
+  -> U_t is a valid upper bound on exact L* in all audited runs? True
+==============================================================================
+BLOCK 5  STRICT pre-registered criteria (C_t escalation alone = FAIL)
+==============================================================================
+  C_t_escalation                    : True
+  functional_novelty_rate_pos       : True
+  reuse_rate_pos                    : True
+  recombination_rate_pos            : False
+  hierarchy_depth_gt1               : True
+  novelty_continues_late            : True
+  capacity_increase_continues       : True
+  timescale_phase_transition_clear  : False
+  interior_peak_tauE                : False
+  COMPOSITIONAL_OPEN_ENDEDNESS      : False
+  --------------------------------------------------------------
+  novelty by tau_E: 10:3.3  30:2.7  100:1.7  300:3.0   (tau_module for flat reuse ~ 0.0)
+  ==> COMPOSITIONAL OPEN-ENDEDNESS (all strict criteria): False
+  diagnosis: reuse, hierarchy-depth>1, functional novelty, late continuity and capacity persistence hold (5/5); the SOLE failing strict criterion is RECOMBINATION=False.
+  recombination (a macro composing >=2 DISTINCT modules) needs clean compositional parsing, but best-tau mean F=0.74<1 and the greedy compressor yields run/chain hierarchies, not multi-child compositions.
+  -> strong arrow MOSTLY traversed: endogenous escalation DOES yield continuing functional novelty + reuse + shallow hierarchy; full RECOMBINATION remains the open frontier.
+plot written: True
+total time: 16.3s

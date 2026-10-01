@@ -1,0 +1,50 @@
+exp607 Multidimensional Semantic Innovation  seeds=[1, 2, 3]
+==============================================================================
+BLOCK 1  parametric-only versus compositional-generative time sweep
+==============================================================================
+           parametric_only adaptive_language T= 100: late(struct/param)=0.0/50.0 classes=1 reuse=99 frontier=100
+           parametric_only adaptive_language T= 300: late(struct/param)=0.0/150.0 classes=1 reuse=299 frontier=300
+           parametric_only adaptive_language T=1000: late(struct/param)=0.0/500.0 classes=1 reuse=999 frontier=1000
+           parametric_only adaptive_language T=3000: late(struct/param)=0.0/1500.0 classes=1 reuse=2999 frontier=3000
+           parametric_only    fixed_language T= 100: late(struct/param)=0.0/0.0 classes=0 reuse=0 frontier=12
+           parametric_only    fixed_language T= 300: late(struct/param)=0.0/0.0 classes=0 reuse=0 frontier=12
+           parametric_only    fixed_language T=1000: late(struct/param)=0.0/0.0 classes=0 reuse=0 frontier=12
+           parametric_only    fixed_language T=3000: late(struct/param)=0.0/0.0 classes=0 reuse=0 frontier=12
+           parametric_only      no_retention T= 100: late(struct/param)=0.0/0.0 classes=1 reuse=0 frontier=12
+           parametric_only      no_retention T= 300: late(struct/param)=0.0/0.0 classes=1 reuse=0 frontier=12
+           parametric_only      no_retention T=1000: late(struct/param)=0.0/0.0 classes=1 reuse=0 frontier=12
+           parametric_only      no_retention T=3000: late(struct/param)=0.0/0.0 classes=1 reuse=0 frontier=12
+           parametric_only          keep_all T= 100: late(struct/param)=0.0/50.0 classes=1 reuse=99 frontier=100
+           parametric_only          keep_all T= 300: late(struct/param)=0.0/150.0 classes=1 reuse=299 frontier=300
+           parametric_only          keep_all T=1000: late(struct/param)=0.0/500.0 classes=1 reuse=999 frontier=1000
+           parametric_only          keep_all T=3000: late(struct/param)=0.0/1500.0 classes=1 reuse=2999 frontier=3000
+  compositional_generative adaptive_language T= 100: late(struct/param)=50.0/0.0 classes=4 reuse=390 frontier=100
+  compositional_generative adaptive_language T= 300: late(struct/param)=150.0/0.0 classes=4 reuse=1190 frontier=300
+  compositional_generative adaptive_language T=1000: late(struct/param)=500.0/0.0 classes=4 reuse=3990 frontier=1000
+  compositional_generative adaptive_language T=3000: late(struct/param)=1500.0/0.0 classes=4 reuse=11990 frontier=3000
+  compositional_generative    fixed_language T= 100: late(struct/param)=0.0/0.0 classes=0 reuse=0 frontier=7
+  compositional_generative    fixed_language T= 300: late(struct/param)=0.0/0.0 classes=0 reuse=0 frontier=7
+  compositional_generative    fixed_language T=1000: late(struct/param)=0.0/0.0 classes=0 reuse=0 frontier=7
+  compositional_generative    fixed_language T=3000: late(struct/param)=0.0/0.0 classes=0 reuse=0 frontier=7
+  compositional_generative      no_retention T= 100: late(struct/param)=0.0/0.0 classes=4 reuse=0 frontier=7
+  compositional_generative      no_retention T= 300: late(struct/param)=0.0/0.0 classes=4 reuse=0 frontier=7
+  compositional_generative      no_retention T=1000: late(struct/param)=0.0/0.0 classes=4 reuse=0 frontier=7
+  compositional_generative      no_retention T=3000: late(struct/param)=0.0/0.0 classes=4 reuse=0 frontier=7
+  compositional_generative          keep_all T= 100: late(struct/param)=50.0/0.0 classes=4 reuse=390 frontier=100
+  compositional_generative          keep_all T= 300: late(struct/param)=150.0/0.0 classes=4 reuse=1190 frontier=300
+  compositional_generative          keep_all T=1000: late(struct/param)=500.0/0.0 classes=4 reuse=3990 frontier=1000
+  compositional_generative          keep_all T=3000: late(struct/param)=1500.0/0.0 classes=4 reuse=11990 frontier=3000
+==============================================================================
+BLOCK 2  pre-registered verdict
+==============================================================================
+  parametric_only_has_no_structural_novelty                       : True
+  compositional_late_structural_novelty_positive                  : True
+  operator_classes_increase_beyond_one                            : True
+  new_operator_classes_retained_and_reused                        : True
+  fixed_and_no_retention_plateau                                  : True
+  adaptive_expands_structural_frontier                            : True
+  structural_rate_stays_positive                                  : True
+  language_not_capacity_saturated                                 : True
+  OPEN_ENDED_SEMANTIC_INNOVATION_CANDIDATE                        : True
+plot written: True
+total time: 10.7s

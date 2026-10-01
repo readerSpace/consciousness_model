@@ -1,0 +1,45 @@
+exp595 Dynamic Interaction Recomposition  seeds=20 n_grid<= 120
+==========================================================================
+BLOCK 1  N_0.9 (min samples to ARI>=0.9) across sequence x condition
+==========================================================================
+    Pi_reuse [    REUSE]: reset=14  modules=8  operators=5  full=8  frozen=8  oracle=2
+    Pi_merge [    MERGE]: reset=10  modules=3  operators=10  full=3  frozen=3  oracle=2
+    Pi_split [    SPLIT]: reset=10  modules=10  operators=10  full=10  frozen=10  oracle=2
+   Pi_recomb [RECOMBINE]: reset=8  modules=8  operators=6  full=8  frozen=8  oracle=2
+    Pi_novel [    NOVEL]: reset=8  modules=8  operators=8  full=8  frozen=8  oracle=2
+==========================================================================
+BLOCK 2  what is remembered?  operators-only vs modules-only vs full
+==========================================================================
+      MERGE: reset=10  modules=3  operators=10  full=3
+  RECOMBINE: reset=8  modules=8  operators=6  full=8
+  RECOMBINE: operators < modules  => the transferable memory is the CONSTRUCTION OPERATORS, not the stored modules: True
+==========================================================================
+BLOCK 3  two-stage: N_0.9 (discover) then T_0.95 (adapt with the operator)
+==========================================================================
+    Pi_reuse [    REUSE]: N0.9 full=8 reset=20  ->  T0.95 mem=153 reset=297
+    Pi_merge [    MERGE]: N0.9 full=2 reset=8  ->  T0.95 mem=610 reset=1365
+    Pi_split [    SPLIT]: N0.9 full=10 reset=10  ->  T0.95 mem=153 reset=297
+   Pi_recomb [RECOMBINE]: N0.9 full=8 reset=14  ->  T0.95 mem=136 reset=370
+    Pi_novel [    NOVEL]: N0.9 full=14 reset=14  ->  T0.95 mem=123 reset=280
+==========================================================================
+BLOCK 4  lineage: how each new block is built from previous parts
+==========================================================================
+    Pi_reuse [    REUSE]: [0, 1, 2, 3]<-REUSE[1]; [4, 5, 6, 7]<-REUSE[2]; [8, 9, 10, 11]<-REUSE[3]; [12, 13, 14, 15]<-REUSE[4]
+    Pi_merge [    MERGE]: [0, 1, 2, 3, 4, 5, 6, 7]<-MERGE[1, 2]; [8, 9, 10, 11]<-REUSE[3]; [12, 13, 14, 15]<-REUSE[4]
+    Pi_split [    SPLIT]: [0, 1, 2, 3]<-RECOMBINE/SPLIT[1001]; [4, 5, 6, 7]<-RECOMBINE/SPLIT[1001]; [8, 9, 10, 11]<-REUSE[3]; [12, 13, 14, 15]<-REUSE[4]
+   Pi_recomb [RECOMBINE]: [0, 1, 4, 5]<-RECOMBINE/SPLIT[1002, 1003]; [2, 3, 6, 7]<-RECOMBINE/SPLIT[1002, 1003]; [8, 9, 10, 11]<-REUSE[3]; [12, 13, 14, 15]<-REUSE[4]
+    Pi_novel [    NOVEL]: [0, 4, 8, 12]<-RECOMBINE/SPLIT[1004, 3, 4]; [1, 5, 9, 13]<-RECOMBINE/SPLIT[1004, 3, 4]; [2, 6, 10, 14]<-RECOMBINE/SPLIT[1005, 3, 4]; [3, 7, 11, 15]<-RECOMBINE/SPLIT[1005, 3, 4]
+==========================================================================
+PRE-REGISTERED DECISION
+==========================================================================
+  transfer helps REUSE (full<reset):        True  (8 vs 14)
+  transfer helps MERGE (full<reset):        True  (3 vs 10)
+  transfer helps RECOMBINE (operators<reset):True  (6 vs 8)
+  NO transfer for NOVEL (memory>=reset):    True  (8 vs 8)
+  frozen cannot RECOMBINE:                  True  (frozen 8 vs operators 6)
+  memory is construction OPERATORS not modules (RECOMBINE): True
+
+  CORE (existing parts are RECOMPOSED for new structures; the transferred memory is the construction operators): True
+figure: recompose.png
+==========================================================================
+done in 69.8s

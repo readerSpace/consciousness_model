@@ -1,0 +1,133 @@
+{
+  "config": {
+    "lam": 0.0015,
+    "lam_mem": 0.0015,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "pop": 120,
+    "g_e0": 220,
+    "g_e1": 400,
+    "threshold": 0.98
+  },
+  "block12_lineage_spec": {
+    "n_specialized": 4,
+    "b_has_parent": 3,
+    "b_parent_is_A": 0,
+    "b_denovo": 1,
+    "n": 8,
+    "T_adapt": {
+      "mean": 61.714285714285715,
+      "std": 44.80342552501438,
+      "n": 7
+    },
+    "S": {
+      "AA": {
+        "mean": 0.6166666666666667,
+        "std": 0.0552770798392567,
+        "n": 4
+      },
+      "AB": {
+        "mean": 0.016666666666666663,
+        "std": 0.02886751345948128,
+        "n": 4
+      },
+      "BA": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 4
+      },
+      "BB": {
+        "mean": 0.65,
+        "std": 0.02886751345948133,
+        "n": 4
+      }
+    }
+  },
+  "block3_controls": {
+    "related": {
+      "dup_on": {
+        "T": {
+          "mean": 154.5,
+          "std": 148.62452691261964,
+          "n": 8
+        },
+        "reached": 7,
+        "n": 8
+      },
+      "dup_off": {
+        "T": {
+          "mean": 298.5,
+          "std": 136.53845612134333,
+          "n": 8
+        },
+        "reached": 3,
+        "n": 8
+      },
+      "dup_advantage": 144.0
+    },
+    "unrelated": {
+      "dup_on": {
+        "T": {
+          "mean": 91.625,
+          "std": 122.41214962167767,
+          "n": 8
+        },
+        "reached": 7,
+        "n": 8
+      },
+      "dup_off": {
+        "T": {
+          "mean": 212.125,
+          "std": 160.26028633133038,
+          "n": 8
+        },
+        "reached": 5,
+        "n": 8
+      },
+      "dup_advantage": 120.5
+    }
+  },
+  "block4_memory": {
+    "first": {
+      "mean": 96.625,
+      "std": 117.79000116733168,
+      "n": 8
+    },
+    "reacquire_prune": {
+      "mean": 21.75,
+      "std": 10.145811943851513,
+      "n": 8
+    },
+    "reacquire_keep": {
+      "mean": 68.625,
+      "std": 134.40883295007066,
+      "n": 8
+    },
+    "reacquire_reset": {
+      "mean": 137.25,
+      "std": 148.67477089271065,
+      "n": 8
+    },
+    "trace_prune": 0,
+    "trace_keep": 8,
+    "n": 8
+  },
+  "decision": {
+    "dup_route": true,
+    "specialization": true,
+    "dup_helps": true,
+    "reuse_specific": true,
+    "memory_reusable": true,
+    "memory_is_compressed": true,
+    "core": true
+  },
+  "runtime_seconds": 316.6249256134033
+}

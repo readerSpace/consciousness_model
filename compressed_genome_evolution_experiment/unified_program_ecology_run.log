@@ -1,0 +1,15 @@
+exp610 Unified Program Ecology  seeds=[1, 2, 3]
+      specialized_two_layer T= 100: semantic=100 late-sem=50 late-transform=0 depth=100
+      specialized_two_layer T= 300: semantic=300 late-sem=150 late-transform=0 depth=300
+      specialized_two_layer T=1000: semantic=1000 late-sem=500 late-transform=0 depth=1000
+    unified_program_ecology T= 100: semantic=100 late-sem=50 late-transform=1 depth=100
+    unified_program_ecology T= 300: semantic=300 late-sem=150 late-transform=1 depth=300
+    unified_program_ecology T=1000: semantic=1000 late-sem=500 late-transform=1 depth=1000
+  unified_reproduces_specialized_semantic_classes                     : True
+  unified_has_late_functional_semantic_classes                        : True
+  unified_has_late_functional_transformer                             : True
+  ancestry_depth_grows                                                : True
+  specialized_has_no_first_class_transformer_birth                    : True
+  unified_language_not_capacity_saturated                             : True
+  UNIFIED_PROGRAM_ECOLOGY_CANDIDATE                                   : True
+total time: 0.2s

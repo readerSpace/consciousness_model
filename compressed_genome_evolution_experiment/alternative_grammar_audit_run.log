@@ -1,0 +1,30 @@
+exp600 Instruction Necessity / Alternative-Grammar Audit
+==============================================================================
+BLOCK 1  distinct primitive grammars: semantic convergence audit
+==============================================================================
+    postfix_ref_concat: fixed=306 born=264 L(D)= 8 tokens=['REF0', 'REF1', 'CONCAT'] concat_equiv=True
+           copy_append: fixed=306 born=264 L(D)= 8 tokens=['COPY0', 'COPY1', 'APPEND'] concat_equiv=True
+           stack_merge: fixed=306 born=264 L(D)= 8 tokens=['PUSH0', 'PUSH1', 'MERGE'] concat_equiv=True
+==============================================================================
+BLOCK 2  environmental and grammar-feasibility controls
+==============================================================================
+              flat_REP: all capable grammars retain no opcode
+                random: all capable grammars retain no opcode
+      copy_repeat_only: fixed=306 total=306 born=False (no binary merge primitive)
+==============================================================================
+BLOCK 3  instruction-birth thresholds by grammar
+==============================================================================
+    postfix_ref_concat: n_opcode_birth*_MDL=2
+           copy_append: n_opcode_birth*_MDL=2
+           stack_merge: n_opcode_birth*_MDL=2
+      copy_repeat_only: n_opcode_birth*_MDL=None
+==============================================================================
+BLOCK 4  conservative audit verdict
+==============================================================================
+  semantic_convergence_across_grammars                   : True
+  no_birth_in_flat_or_random_controls                    : True
+  no_birth_without_binary_merge_primitive                : True
+  capable_grammar_thresholds_match                       : True
+  COMPOSITION_SEMANTICS_CONVERGENT_WITHIN_AUDITED_GRAMMARS: True
+plot written: True
+total time: 0.4s

@@ -1,0 +1,91 @@
+{
+  "config": {
+    "n_tuples": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      12,
+      16,
+      20,
+      30
+    ]
+  },
+  "o1": {
+    "K_O1_P0": 14,
+    "definition": [
+      "REF0",
+      "BOX",
+      "REF1",
+      "PAIR",
+      "FLATTEN"
+    ],
+    "retained_bits": 14
+  },
+  "o2_controls": {
+    "base": {
+      "K_O2": 36,
+      "expression": "RAW_JOIN(r0,RAW_JOIN(r1,RAW_JOIN(r2,r3)))",
+      "n_birth_MDL": 3,
+      "history_bits_sunk": 0,
+      "total_at_birth": 146,
+      "fixed_at_birth": 158
+    },
+    "history_useful_O1": {
+      "K_O2": 18,
+      "expression": "O1(r0,O1(r1,O1(r2,r3)))",
+      "n_birth_MDL": 2,
+      "history_bits_sunk": 14,
+      "total_at_birth": 102,
+      "fixed_at_birth": 116
+    },
+    "history_irrelevant": {
+      "K_O2": 36,
+      "expression": "RAW_JOIN(r0,RAW_JOIN(r1,RAW_JOIN(r2,r3)))",
+      "n_birth_MDL": 3,
+      "history_bits_sunk": 14,
+      "total_at_birth": 146,
+      "fixed_at_birth": 158
+    }
+  },
+  "cumulative_trace": [
+    {
+      "stage": 1,
+      "arity": 2,
+      "K_P0": 14,
+      "K_history": 14,
+      "ratio": 1.0,
+      "history": "base",
+      "n_birth_MDL": 3,
+      "n_birth_P0_MDL": 3
+    },
+    {
+      "stage": 2,
+      "arity": 4,
+      "K_P0": 36,
+      "K_history": 18,
+      "ratio": 0.5,
+      "history": "history_useful_O1",
+      "n_birth_MDL": 2,
+      "n_birth_P0_MDL": 3
+    },
+    {
+      "stage": 3,
+      "arity": 8,
+      "K_P0": 80,
+      "K_history": 30,
+      "ratio": 0.375,
+      "history": "history_useful_O1_O2",
+      "n_birth_MDL": 2,
+      "n_birth_P0_MDL": 6
+    }
+  ],
+  "verdict": {
+    "USEFUL_HISTORY_NOT_LANGUAGE_SIZE_CAUSES_O2_ADVANTAGE": true,
+    "CUMULATIVE_HISTORY_LOWERED_LATER_SEMANTIC_COMPLEXITY": true,
+    "CUMULATIVE_HISTORY_ACCELERATED_BIRTH_THRESHOLDS": true,
+    "CUMULATIVE_REPRESENTATIONAL_EVOLUTION": true
+  }
+}

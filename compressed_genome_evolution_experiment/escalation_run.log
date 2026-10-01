@@ -1,0 +1,42 @@
+exp596 Endogenous Complexity Escalation  A=2 L=16 seeds=[1, 2, 3] macro_steps=50
+============================================================================
+BLOCK 1  co-evolution vs controls  (C_t growth / novelty / reuse / bloat)
+============================================================================
+   coevolution: C init 2.0 mean  7.8 p75 11.7 peak 22.3 F=0.96 K= 15.3 gap= +4.1 novel=0.0 reuse=0.00 recomb=0.00
+        frozen: C init 2.0 mean  2.0 p75  2.0 peak  2.0 F=1.00 K=  7.0 gap= +5.0 novel=0.0 reuse=0.00 recomb=0.00
+        no-MDL: C init 2.0 mean  9.8 p75 17.0 peak 22.7 F=0.90 K= 18.3 gap= +7.8 novel=0.3 reuse=0.00 recomb=0.00
+     no-recomb: C init 2.0 mean  7.8 p75 11.7 peak 22.3 F=0.96 K= 15.3 gap= +4.1 novel=0.0 reuse=0.00 recomb=0.00
+    random-env: C init 2.0 mean 13.7 p75 22.3 peak 38.3 F=0.94 K=  7.0 gap= -1.2 novel=0.0 reuse=0.00 recomb=0.00
+============================================================================
+BLOCK 2  capacity scaling K_max in {8,16,24,32}  (bloat vs mechanism)
+============================================================================
+  K_max=  8: C_peak=  7.0 C_mean=  4.0 (C_peak/K_max=0.88) novel=0.0
+  K_max= 16: C_peak= 26.5 C_mean=  5.7 (C_peak/K_max=1.66) novel=0.0
+  K_max= 24: C_peak= 22.0 C_mean=  8.8 (C_peak/K_max=0.92) novel=0.0
+  K_max= 32: C_peak= 29.0 C_mean= 11.7 (C_peak/K_max=0.91) novel=0.0
+  -> C pinned to K_max for all caps (boundary bloat)? False
+  -> the frontier C_peak grows as capacity grows? True
+============================================================================
+BLOCK 3  exp597 audit: long run (steps=90)  coevolution vs frozen
+============================================================================
+   coevolution: C_mean=  8.3 C_peak= 23.3 early->late window= 7.9-> 8.3
+        frozen: C_mean=  2.0 C_peak=  2.0 early->late window= 2.0-> 2.0
+  -> escalation sustained above frozen baseline (no collapse)? True
+============================================================================
+BLOCK 4  boxed criterion for ENDOGENOUS COMPLEXITY ESCALATION
+============================================================================
+  c1_required_complexity_rises          : True
+  c4_frozen_environment_plateaus        : True
+  c5_capacity_increase_continues        : True
+  support_noMDL_bloat                   : True
+  support_randomEnv_fails               : True
+  support_longrun_sustained             : True
+  module_functional_novelty             : False
+  module_reuse_and_recombination        : False
+  ENDOGENOUS_COMPLEXITY_ESCALATION      : True
+  MODULE_LEVEL_OPENENDEDNESS            : False
+  ------------------------------------------------------------
+  ==> ENDOGENOUS COMPLEXITY ESCALATION (robust core): True
+  ==> module-level compositional open-endedness (stricter, exp597): False
+plot written: True
+total time: 138.6s

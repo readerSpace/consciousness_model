@@ -1,0 +1,25 @@
+exp601 Primitive Basis Ablation / Computational Necessity
+==============================================================================
+BLOCK 1  semantic complexity K_P(a||b) and instruction birth
+==============================================================================
+                         full: expressible=True K=8 reusable=True threshold=2 fixed=306 total=264 witness=['REF0', 'REF1', 'MERGE']
+                    minus_ref: expressible=False K=None reusable=True threshold=None fixed=306 total=306 witness=[]
+                  minus_order: expressible=False K=None reusable=True threshold=None fixed=306 total=306 witness=[]
+                  minus_merge: expressible=False K=None reusable=True threshold=None fixed=306 total=306 witness=[]
+                  minus_reuse: expressible=True K=8 reusable=False threshold=None fixed=306 total=306 witness=['REF0', 'REF1', 'MERGE']
+     distant_box_pair_flatten: expressible=True K=14 reusable=True threshold=3 fixed=306 total=270 witness=['REF0', 'BOX', 'REF1', 'PAIR', 'FLATTEN']
+==============================================================================
+BLOCK 2  flat/random controls for expressible bases
+==============================================================================
+                     flat_REP: full born=False distant born=False
+                       random: full born=False distant born=False
+==============================================================================
+BLOCK 3  conservative verdict
+==============================================================================
+  REF_ORDER_MERGE_ARE_COMPUTATIONALLY_NECESSARY                 : True
+  REUSE_IS_SELECTIVELY_NECESSARY                                : True
+  K_P_PREDICTS_LATER_BIRTH_FOR_DISTANT_BASIS                    : True
+  NO_BIRTH_IN_NONCOMPOSITIONAL_WORLDS                           : True
+  BASIS_DISTANCE_GOVERNS_INSTRUCTION_BIRTH_WITHIN_AUDITED_BASES : True
+plot written: True
+total time: 0.5s
